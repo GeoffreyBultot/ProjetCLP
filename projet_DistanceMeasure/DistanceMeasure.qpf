@@ -18,13 +18,14 @@
 #
 # Quartus II 64-Bit
 # Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-# Date created = 09:55:15  September 22, 2020
+# Date created = 17:58:32  September 23, 2020
 #
 # -------------------------------------------------------------------------- #
 
 QUARTUS_VERSION = "13.0"
-DATE = "09:55:15  September 22, 2020"
+DATE = "17:58:32  September 23, 2020"
 
 # Revisions
 
 PROJECT_REVISION = "DistanceMeasure"
+PROJECT_REVISION = "DistanceMeasure_qsim"

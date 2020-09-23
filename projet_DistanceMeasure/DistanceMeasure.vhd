@@ -25,15 +25,17 @@ LIBRARY work;
 ENTITY DistanceMeasure IS 
 	PORT
 	(
-		reset : IN STD_LOGIC;
 		CLOCK_50M : IN STD_LOGIC;
-		OUTPUT :  OUT  STD_LOGIC;
-		chip_select : out std_logic;
-		the_ADC_CS : out STD_LOGIC;
-		the_ADC_SCLK: out STD_LOGIC;
-		the_ADC_IN : out STD_LOGIC;
-		the_ADC_OUT: IN STD_LOGIC_vector (11 downto 0)
+		CLOCK_25M : IN STD_LOGIC;
+		ext_ADC_CS : out STD_LOGIC;
+		ext_ADC_SCLK: out STD_LOGIC; --sclk to adc
+		ext_ADC_IN : in STD_LOGIC; --in by ADC
+		temp_ADC_OUT: out STD_LOGIC_vector (11 downto 0);
 		
+		temp_DigitDecade : out std_logic_vector (3 downto 0);
+		temp_DigitUnit : out std_logic_vector (3 downto 0);
+		temp_DigitTenth : out std_logic_vector (3 downto 0);
+		temp_DigitHundredth : out std_logic_vector (3 downto 0)
 		
 	);
 END DistanceMeasure;
@@ -41,7 +43,7 @@ END DistanceMeasure;
 ARCHITECTURE Behavioral OF DistanceMeasure IS 
 
 --variable Count : unsigned integer:=0;
-signal clock_ADC_temp: std_logic;
+signal clock_ADC_2500khz: std_logic;
 signal sig_ADC_CS :std_logic;
 signal sig_ADC_IN :std_logic;
 signal sig_ADC_OUT :std_logic_vector (11 downto 0);
@@ -56,26 +58,47 @@ end component;
 component ADC is
 port(
 		
-		ADC_CS : out std_logic;
+		ADC_CS_N : out std_logic;
 		ADC_SCLK : in std_logic;--ADC clock
 		ADC_DIN : in std_logic;
 		ADC_DOUT : out std_logic_vector (11 downto 0)
 		);
 end component;
 
+component rawTo4Digit is 
+port(
+		RAW_VALUE_IN : in std_logic_vector (11 downto 0);
+		DigitDecade : out std_logic_vector (3 downto 0);
+		DigitUnit : out std_logic_vector (3 downto 0); 
+		DigitTenth : out std_logic_vector (3 downto 0);
+		DigitHundredth : out std_logic_vector (3 downto 0)
+	);
+end component;
+
+
 
 BEGIN
-the_ADC_CS<= sig_ADC_CS ;
-the_ADC_IN<= sig_ADC_IN ;
-sig_ADC_OUT <= the_ADC_OUT;
-fd1 : freq_div port map (clock_in=>CLOCK_50M,clock_out=>clock_ADC_temp);
-OUTPUT<=clock_ADC_temp;
+ext_ADC_CS<= sig_ADC_CS ;
+sig_ADC_IN<= ext_ADC_IN ;
+temp_ADC_OUT<= sig_ADC_OUT ;
+CLOck_ADC_2500khz <= CLOCK_25M;
+
+--fd1 : freq_div port map (clock_in=>CLOCK_50M,clock_out=>clock_ADC_2500khz);
+
+ext_ADC_SCLK <= clock_ADC_2500khz;
+
 ADC0 : ADC port map (
-				ADC_CS=>sig_ADC_CS,
-				ADC_SCLK=>clock_ADC_temp,
+				ADC_CS_N=>sig_ADC_CS,
+				ADC_SCLK=>clock_ADC_2500khz,
 				ADC_DIN=>sig_ADC_IN,
 				ADC_DOUT=>sig_ADC_OUT);
 
-
+Converter0 : rawTo4Digit port map (
+				RAW_VALUE_IN => sig_ADC_OUT,
+				DigitDecade => temp_DigitDecade,
+				DigitUnit => temp_DigitUnit,
+				DigitTenth => temp_DigitTenth,
+				DigitHundredth => temp_DigitHundredth
+		);	
 
 END Behavioral;

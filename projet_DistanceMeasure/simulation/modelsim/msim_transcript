@@ -10,7 +10,7 @@
 # ** Warning: Copied D:\Programmes\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vcom -93 -work work {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/DistanceMeasure.vhd}
+# vcom -93 -work work {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/DistanceMeasure.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -18,7 +18,7 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity DistanceMeasure
 # -- Compiling architecture Behavioral of DistanceMeasure
-# vcom -93 -work work {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/ADC.vhd}
+# vcom -93 -work work {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/ADC.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -26,13 +26,15 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity ADC
 # -- Compiling architecture Behavioral of ADC
-# vcom -93 -work work {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/freq_div.vhd}
+# vcom -93 -work work {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/rawTo4Digit.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity freq_div
-# -- Compiling architecture behavioral of freq_div
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling entity rawTo4Digit
+# -- Compiling architecture Behavioral of rawTo4Digit
 # 
 vsim work.distancemeasure
 # vsim work.distancemeasure 
@@ -41,119 +43,76 @@ vsim work.distancemeasure
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading work.distancemeasure(behavioral)
-# Loading work.freq_div(behavioral)
 # Loading work.adc(behavioral)
-add wave -position insertpoint  \
-sim:/distancemeasure/CLOCK_50M
-wave create -driver freeze -pattern clock -initialvalue 1 -period 10ns -dutycycle 50 -starttime 0ns -endtime 1000ns sim:/distancemeasure/CLOCK_50M
-add wave -position insertpoint  \
-sim:/distancemeasure/OUTPUT
-run
-run
-run
-# ** Fatal: (vsim-3421) Value 21 for temp is out of range 0 to 20.
-#    Time: 210 ns  Iteration: 0  Process: /distancemeasure/fd1/line__13 File: D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/freq_div.vhd
-# Fatal error in Process line__13 at D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/freq_div.vhd line 18
-# 
-# HDL call sequence:
-# Stopped at D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/freq_div.vhd 18 Process line__13
-# 
-vlog -reportprogress 300 -work work {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/simulation/modelsim/DistanceMeasure.vo}
+# Loading ieee.math_real(body)
+# Loading work.rawto4digit(behavioral)
+vlog -reportprogress 300 -work work {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/simulation/modelsim/DistanceMeasure.vo}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# ** Error: (vlog-7) Failed to open design unit file "D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/simulation/modelsim/DistanceMeasure.vo" in read mode.
+# -- Compiling module DistanceMeasure
 # 
-# No such file or directory. (errno = ENOENT)
-vlog -reportprogress 300 -work work {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/simulation/modelsim/DistanceMeasure.vo}
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# ** Error: (vlog-7) Failed to open design unit file "D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/simulation/modelsim/DistanceMeasure.vo" in read mode.
-# 
-# No such file or directory. (errno = ENOENT)
-vcom -reportprogress 300 -work work {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/simulation/modelsim/DistanceMeasure.vho}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package VITAL_Timing
-# -- Loading package VITAL_Primitives
-# -- Loading package dffeas_pack
-# -- Loading package altera_primitives_components
-# -- Loading package cycloneive_atom_pack
-# -- Loading package cycloneive_components
-# -- Compiling entity DistanceMeasure
-# -- Compiling architecture structure of DistanceMeasure
-run
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/freq_div.vhd 18 Process line__13
-# 
-run
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/freq_div.vhd 18 Process line__13
-# 
-restart
-# Loading ieee.vital_timing(body)
-# Loading ieee.vital_primitives(body)
-# Loading altera.dffeas_pack
-# Loading altera.altera_primitives_components
-# Loading cycloneive.cycloneive_atom_pack(body)
-# Loading cycloneive.cycloneive_components
-# Loading work.distancemeasure(structure)
-# Loading altera.dffeas(vital_dffeas)
-# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
-# Loading ieee.std_logic_arith(body)
-# Loading cycloneive.cycloneive_io_obuf(arch)
-# Loading cycloneive.cycloneive_io_ibuf(arch)
-# Loading cycloneive.cycloneive_clkctrl(vital_clkctrl)
-# Loading cycloneive.cycloneive_ena_reg(behave)
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
+# Top level modules:
+# 	DistanceMeasure
+wave create -driver freeze -pattern clock -initialvalue U -period 2ns -dutycycle 50 -starttime 0ns -endtime 1000ns sim:/distancemeasure/CLOCK_25M
 add wave -position insertpoint  \
-sim:/distancemeasure/the_ADC_CS
-add wave -position insertpoint  \
-sim:/distancemeasure/the_ADC_SCLK
-restart -f
-run -all
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/simulation/modelsim/wave.do}
-wave editwrite -file {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/simulation/modelsim/wave.do} -append
-restart -f
-vcom -reportprogress 300 -work work {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/simulation/modelsim/DistanceMeasure.vho}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package VITAL_Timing
-# -- Loading package VITAL_Primitives
-# -- Loading package dffeas_pack
-# -- Loading package altera_primitives_components
-# -- Loading package cycloneive_atom_pack
-# -- Loading package cycloneive_components
-# -- Compiling entity DistanceMeasure
-# -- Compiling architecture structure of DistanceMeasure
-vcom -reportprogress 30 -work work {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/simulation/modelsim/DistanceMeasure.vho}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package VITAL_Timing
-# -- Loading package VITAL_Primitives
-# -- Loading package dffeas_pack
-# -- Loading package altera_primitives_components
-# -- Loading package cycloneive_atom_pack
-# -- Loading package cycloneive_components
-# -- Compiling entity DistanceMeasure
-# -- Compiling architecture structure of DistanceMeasure
-run -all
-run -all
+sim:/distancemeasure/ext_ADC_CS \
+sim:/distancemeasure/ext_ADC_SCLK \
+sim:/distancemeasure/ext_ADC_IN \
+sim:/distancemeasure/temp_ADC_OUT \
+sim:/distancemeasure/temp_DigitDecade \
+sim:/distancemeasure/temp_DigitUnit \
+sim:/distancemeasure/temp_DigitTenth \
+sim:/distancemeasure/temp_DigitHundredth
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 # 
-# Internal Error: In tclprim_ApplyStimulus for /distancemeasure/CLOCK_50M "Time value must be greater than "now": 1000000 ps
-# ** Error: (vsim-4004) The -cancel option requires a time period argument.
-# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+#           File in use by: geoff  Hostname: DESKTOP-G6OJVDD  ProcessID: 19388
+# 
+#           Attempting to use alternate WLF file "./wlftsm90d5".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftsm90d5
+# 
+wave create -driver freeze -pattern clock -initialvalue U -period 5ns -dutycycle 50 -starttime 0ns -endtime 1000ns sim:/distancemeasure/ext_ADC_IN
+add wave -position 1 -format Logic -height 17 -editable 2 Edit:/distancemeasure/ext_ADC_IN
+run
+run
+run
+run
+run
+run
+run
+run
+restart -f
+run
+run
+run
+# Break in Process line__43 at D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/rawTo4Digit.vhd line 59
+step
+step
+step
+step
+step
+step
+step -out -current
+step -over
+step -over
+step
+step
+step
+step
+step
+step
+step
+step
+run
+# Break in Process line__43 at D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/rawTo4Digit.vhd line 59
+run
+# Break in Process line__43 at D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/rawTo4Digit.vhd line 59
+run
+# Break in Process line__43 at D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/rawTo4Digit.vhd line 59
+run
+# Break in Process line__43 at D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/rawTo4Digit.vhd line 59
+run
+run
+run
+run
+wave editwrite -file {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/simulation/modelsim/wave.do}

@@ -2,35 +2,35 @@ m255
 K3
 13
 cModel Technology
-Z0 dD:\geoff\OneDrive - Haute Ecole Bruxelles Brabant (HE2B)\Ecole 2020 - 2021\UE_SystemesEmbarques\CircuitsLogiqueProgrammable\Cours\Projet_final\projet_DistanceMeasure\simulation\modelsim
+Z0 dD:\geoff\OneDrive - Haute Ecole Bruxelles Brabant (HE2B)\Ecole 2020 - 2021\UE_SystemesEmbarques\CircuitsLogiqueProgrammable\Cours\ProjetCLP\projet_DistanceMeasure\simulation\modelsim
 Eadc
-Z1 w1600766334
+Z1 w1600892938
 Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z5 dD:\geoff\OneDrive - Haute Ecole Bruxelles Brabant (HE2B)\Ecole 2020 - 2021\UE_SystemesEmbarques\CircuitsLogiqueProgrammable\Cours\Projet_final\projet_DistanceMeasure\simulation\modelsim
-Z6 8D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/ADC.vhd
-Z7 FD:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/ADC.vhd
+Z5 dD:\geoff\OneDrive - Haute Ecole Bruxelles Brabant (HE2B)\Ecole 2020 - 2021\UE_SystemesEmbarques\CircuitsLogiqueProgrammable\Cours\ProjetCLP\projet_DistanceMeasure\simulation\modelsim
+Z6 8D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/ADC.vhd
+Z7 FD:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/ADC.vhd
 l0
 L25
-V<QNY8?FX]bz]9@DE>PQnV2
+V7=PN_0h<P:l>fh@0ZP91h1
 Z8 OV;C;10.1d;51
 31
-Z9 !s108 1600767634.825000
-Z10 !s90 -reportprogress|300|-93|-work|work|D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/ADC.vhd|
-Z11 !s107 D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/ADC.vhd|
+Z9 !s108 1600895289.642000
+Z10 !s90 -reportprogress|300|-93|-work|work|D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/ADC.vhd|
+Z11 !s107 D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/ADC.vhd|
 Z12 o-93 -work work -O0
 Z13 tExplicit 1
-!s100 [ETFM48KLAYe3c]]Lz>Ne3
+!s100 E<e9gBEU_RPm]H8aMV0[L1
 !i10b 1
 Abehavioral
 R2
 R3
 R4
-DEx4 work 3 adc 0 22 <QNY8?FX]bz]9@DE>PQnV2
-l42
+DEx4 work 3 adc 0 22 7=PN_0h<P:l>fh@0ZP91h1
+l41
 L37
-VJ70nBJoK:aEmCHJ29=d>J1
+VV45i^cOag8ONAKPm_lndg2
 R8
 31
 R9
@@ -38,107 +38,101 @@ R10
 R11
 R12
 R13
-!s100 jBzBVgzNnVCSI`f<5b4U@0
+!s100 fHC7Z=J>fAF:g:Dbi1d?30
 !i10b 1
-Edistancemeasure
-Z14 w1600768094
-Z15 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 cd[Seo6Ho1SGM]T7J5PZf1
-Z16 DPx10 cycloneive 21 cycloneive_components 0 22 nEgJbijGI2K;f9eTCY=a53
-Z17 DPx4 ieee 16 vital_primitives 0 22 9W@YP9_VCb?_GCJ8e:;YQ0
-Z18 DPx6 altera 11 dffeas_pack 0 22 V<:VM@_ZRfA@BFU^UjV7P1
-Z19 DPx4 ieee 12 vital_timing 0 22 7h8zz2S4HVg:a;2TBMI[j1
-R3
-R4
-Z20 DPx6 altera 28 altera_primitives_components 0 22 NkeTOLzIAn1B7JGKi`Mk?0
+vDistanceMeasure
+!i10b 1
+!s100 ]Q5[[MKKi1Xk7JR5zfo450
+I?;QzmjAWeF`h<Bl`DLGTY3
+VB3Q0_9UcahClbTGX?Pm8L2
 R5
-Z21 8D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/simulation/modelsim/DistanceMeasure.vho
-Z22 FD:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/simulation/modelsim/DistanceMeasure.vho
-l0
-L36
-VYITb>Q7:X[S`mFVIBWe0W1
-!s100 9lGAVIZEMK_QSmIO8<SEV3
-R8
-32
-!i10b 1
-Z23 !s108 1600768116.540000
-Z24 !s90 -reportprogress|30|-work|work|D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/simulation/modelsim/DistanceMeasure.vho|
-Z25 !s107 D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/simulation/modelsim/DistanceMeasure.vho|
-Z26 o-work work -O0
-R13
-Astructure
-R15
-R16
-R17
-R18
-R19
+w1600895013
+8D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/simulation/modelsim/DistanceMeasure.vo
+FD:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/simulation/modelsim/DistanceMeasure.vo
+L0 31
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1600895380.346000
+!s107 D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/simulation/modelsim/DistanceMeasure.vo|
+!s90 -reportprogress|300|-work|work|D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/simulation/modelsim/DistanceMeasure.vo|
+!s101 -O0
+o-work work -O0
+n@distance@measure
+Edistancemeasure
+Z14 w1600890509
+R2
 R3
 R4
-R20
-Z27 DEx4 work 15 distancemeasure 0 22 YITb>Q7:X[S`mFVIBWe0W1
-l134
-L71
-Z28 Vl_KOcd;L8`O;>>PP0b`hn0
-Z29 !s100 B1Y;Sj]9Ph@GLRo4NLO@O3
+R5
+Z15 8D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/DistanceMeasure.vhd
+Z16 FD:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/DistanceMeasure.vhd
+l0
+L25
+V5jSMddUXh9fWI;5V70n=F1
 R8
-32
-!i10b 1
-R23
-R24
-R25
-R26
+31
+Z17 !s108 1600895288.752000
+Z18 !s90 -reportprogress|300|-93|-work|work|D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/DistanceMeasure.vhd|
+Z19 !s107 D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/DistanceMeasure.vhd|
+R12
 R13
+!s100 P<[g]8;a^GmRbZfccYh2B2
+!i10b 1
 Abehavioral
 R2
 R3
 R4
-DEx4 work 15 distancemeasure 0 22 f9k?dS;ogzC_47ioGhoS]0
-l67
-L41
-V]Y764BCM3IjCEX@N4mWa13
+DEx4 work 15 distancemeasure 0 22 5jSMddUXh9fWI;5V70n=F1
+l80
+L43
+V[f7ScX7ReB3:B`G=z4@ZJ0
 R8
 31
+R17
+R18
+R19
 R12
 R13
-FD:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/DistanceMeasure.vhd
-w1600767179
-8D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/DistanceMeasure.vhd
-!s108 1600767634.470000
-!s90 -reportprogress|300|-93|-work|work|D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/DistanceMeasure.vhd|
-!s107 D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/DistanceMeasure.vhd|
-!s100 g[AOcfUL`IKQ^W>3dHD]H1
+!s100 jZg4K6A^[c`RNgnRQh90f1
 !i10b 1
-Efreq_div
-Z30 w1600763638
+Erawto4digit
+Z20 w1600894953
+Z21 DPx4 ieee 9 math_real 0 22 :iME`dTX54_U49lJNF5JI3
+R2
 R3
 R4
 R5
-Z31 8D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/freq_div.vhd
-Z32 FD:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/freq_div.vhd
+Z22 8D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/rawTo4Digit.vhd
+Z23 FD:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/rawTo4Digit.vhd
 l0
-L4
-VlUcz_Ei9X3BVSe6^Z3]8_3
+L26
+VCcDgRka>o9oW1j=6XQ3k_2
 R8
 31
-Z33 !s108 1600767635.514000
-Z34 !s90 -reportprogress|300|-93|-work|work|D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/freq_div.vhd|
-Z35 !s107 D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/Projet_final/projet_DistanceMeasure/freq_div.vhd|
+Z24 !s108 1600895290.869000
+Z25 !s90 -reportprogress|300|-93|-work|work|D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/rawTo4Digit.vhd|
+Z26 !s107 D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/rawTo4Digit.vhd|
 R12
 R13
-!s100 BVbWJ855old5BTn>4458l0
+!s100 G8g`?2<]mNocbN_`;eQF]0
 !i10b 1
 Abehavioral
+R21
+R2
 R3
 R4
-DEx4 work 8 freq_div 0 22 lUcz_Ei9X3BVSe6^Z3]8_3
-l11
-L9
-VG^@L>6gn]LEV5BA9aQZe@0
+DEx4 work 11 rawto4digit 0 22 CcDgRka>o9oW1j=6XQ3k_2
+l42
+L37
+VADYY`Hb<`:mVC=zoOBh952
 R8
 31
-R33
-R34
-R35
+R24
+R25
+R26
 R12
 R13
-!s100 YH7E0WE;G@_:NPD<Pa2bA2
+!s100 Q7<716LcNCLI=89a;3k]I0
 !i10b 1

@@ -1,0 +1,230 @@
+Simulator report for DistanceMeasure_qsim
+Wed Sep 23 17:46:21 2020
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 55 nodes     ;
+; Simulation Coverage         ;      69.81 % ;
+; Total Number of Transitions ; 1861         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone III  ;
++-----------------------------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                                                                                                                                           ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                                                                                                                                         ; Default Value ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                                                                                                                                                      ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                                                                                                                                            ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                                                                                                                                             ;               ;
+; Vector input source                                                                        ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/Waveform.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                                                                                                                                              ; On            ;
+; Check outputs                                                                              ; Off                                                                                                                                                                             ; Off           ;
+; Report simulation coverage                                                                 ; On                                                                                                                                                                              ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                                                                                                                                              ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                                                                                                                                              ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                                                                                                                                              ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                                                                                                                                             ; Off           ;
+; Detect glitches                                                                            ; Off                                                                                                                                                                             ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                                                                                                                                             ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                                                                                                                                             ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                                                                                                                                             ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                                                                                                                                             ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                                                                                                                                              ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                                                                                                                                      ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                                                                                                                                             ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                                                                                                                                             ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                                                                                                                                            ; Auto          ;
+; Interconnect Delay Model Type                                                              ; Transport                                                                                                                                                                       ; Transport     ;
+; Cell Delay Model Type                                                                      ; Transport                                                                                                                                                                       ; Transport     ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      69.81 % ;
+; Total nodes checked                                 ; 55           ;
+; Total output ports checked                          ; 53           ;
+; Total output ports with complete 1/0-value coverage ; 37           ;
+; Total output ports with no 1/0-value coverage       ; 12           ;
+; Total output ports with no 1-value coverage         ; 12           ;
+; Total output ports with no 0-value coverage         ; 16           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                          ;
++-----------------------------------------+-----------------------------------------+------------------+
+; Node Name                               ; Output Port Name                        ; Output Port Type ;
++-----------------------------------------+-----------------------------------------+------------------+
+; |DistanceMeasure|CLOCK_25M              ; |DistanceMeasure|CLOCK_25M              ; out              ;
+; |DistanceMeasure|ext_ADC_CS             ; |DistanceMeasure|ext_ADC_CS             ; pin_out          ;
+; |DistanceMeasure|ext_ADC_SCLK           ; |DistanceMeasure|ext_ADC_SCLK           ; pin_out          ;
+; |DistanceMeasure|ext_ADC_IN             ; |DistanceMeasure|ext_ADC_IN             ; out              ;
+; |DistanceMeasure|temp_ADC_OUT[2]        ; |DistanceMeasure|temp_ADC_OUT[2]        ; pin_out          ;
+; |DistanceMeasure|temp_ADC_OUT[4]        ; |DistanceMeasure|temp_ADC_OUT[4]        ; pin_out          ;
+; |DistanceMeasure|temp_ADC_OUT[6]        ; |DistanceMeasure|temp_ADC_OUT[6]        ; pin_out          ;
+; |DistanceMeasure|temp_ADC_OUT[8]        ; |DistanceMeasure|temp_ADC_OUT[8]        ; pin_out          ;
+; |DistanceMeasure|ADC:ADC0|ADC_DOUT[2]   ; |DistanceMeasure|ADC:ADC0|ADC_DOUT[2]   ; regout           ;
+; |DistanceMeasure|ADC:ADC0|dato_temp[0]  ; |DistanceMeasure|ADC:ADC0|dato_temp[0]  ; regout           ;
+; |DistanceMeasure|ADC:ADC0|enable        ; |DistanceMeasure|ADC:ADC0|enable        ; regout           ;
+; |DistanceMeasure|ADC:ADC0|ADC_DOUT[4]   ; |DistanceMeasure|ADC:ADC0|ADC_DOUT[4]   ; regout           ;
+; |DistanceMeasure|ADC:ADC0|ADC_DOUT[6]   ; |DistanceMeasure|ADC:ADC0|ADC_DOUT[6]   ; regout           ;
+; |DistanceMeasure|ADC:ADC0|ADC_DOUT[8]   ; |DistanceMeasure|ADC:ADC0|ADC_DOUT[8]   ; regout           ;
+; |DistanceMeasure|ADC:ADC0|temp[1]       ; |DistanceMeasure|ADC:ADC0|temp[1]       ; regout           ;
+; |DistanceMeasure|ADC:ADC0|temp[2]       ; |DistanceMeasure|ADC:ADC0|temp[2]       ; regout           ;
+; |DistanceMeasure|ADC:ADC0|temp[3]       ; |DistanceMeasure|ADC:ADC0|temp[3]       ; regout           ;
+; |DistanceMeasure|ADC:ADC0|temp[4]       ; |DistanceMeasure|ADC:ADC0|temp[4]       ; regout           ;
+; |DistanceMeasure|ADC:ADC0|dato_temp[1]  ; |DistanceMeasure|ADC:ADC0|dato_temp[1]  ; regout           ;
+; |DistanceMeasure|ADC:ADC0|dato_temp[2]  ; |DistanceMeasure|ADC:ADC0|dato_temp[2]  ; regout           ;
+; |DistanceMeasure|ADC:ADC0|dato_temp[3]  ; |DistanceMeasure|ADC:ADC0|dato_temp[3]  ; regout           ;
+; |DistanceMeasure|ADC:ADC0|dato_temp[4]  ; |DistanceMeasure|ADC:ADC0|dato_temp[4]  ; regout           ;
+; |DistanceMeasure|ADC:ADC0|dato_temp[5]  ; |DistanceMeasure|ADC:ADC0|dato_temp[5]  ; regout           ;
+; |DistanceMeasure|ADC:ADC0|dato_temp[6]  ; |DistanceMeasure|ADC:ADC0|dato_temp[6]  ; regout           ;
+; |DistanceMeasure|ADC:ADC0|dato_temp[7]  ; |DistanceMeasure|ADC:ADC0|dato_temp[7]  ; regout           ;
+; |DistanceMeasure|ADC:ADC0|dato_temp[8]  ; |DistanceMeasure|ADC:ADC0|dato_temp[8]  ; regout           ;
+; |DistanceMeasure|ADC:ADC0|dato_temp[9]  ; |DistanceMeasure|ADC:ADC0|dato_temp[9]  ; regout           ;
+; |DistanceMeasure|ADC:ADC0|dato_temp[10] ; |DistanceMeasure|ADC:ADC0|dato_temp[10] ; regout           ;
+; |DistanceMeasure|ADC:ADC0|dato_temp[11] ; |DistanceMeasure|ADC:ADC0|dato_temp[11] ; regout           ;
+; |DistanceMeasure|ADC:ADC0|Add0~0        ; |DistanceMeasure|ADC:ADC0|Add0~0        ; out0             ;
+; |DistanceMeasure|ADC:ADC0|Add0~1        ; |DistanceMeasure|ADC:ADC0|Add0~1        ; out0             ;
+; |DistanceMeasure|ADC:ADC0|Add0~2        ; |DistanceMeasure|ADC:ADC0|Add0~2        ; out0             ;
+; |DistanceMeasure|ADC:ADC0|Add0~3        ; |DistanceMeasure|ADC:ADC0|Add0~3        ; out0             ;
+; |DistanceMeasure|ADC:ADC0|Add0~4        ; |DistanceMeasure|ADC:ADC0|Add0~4        ; out0             ;
+; |DistanceMeasure|ADC:ADC0|Add0~5        ; |DistanceMeasure|ADC:ADC0|Add0~5        ; out0             ;
+; |DistanceMeasure|ADC:ADC0|Add0~6        ; |DistanceMeasure|ADC:ADC0|Add0~6        ; out0             ;
+; |DistanceMeasure|ADC:ADC0|Equal0~0      ; |DistanceMeasure|ADC:ADC0|Equal0~0      ; out0             ;
++-----------------------------------------+-----------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                           ;
++----------------------------------------+----------------------------------------+------------------+
+; Node Name                              ; Output Port Name                       ; Output Port Type ;
++----------------------------------------+----------------------------------------+------------------+
+; |DistanceMeasure|temp_ADC_OUT[1]       ; |DistanceMeasure|temp_ADC_OUT[1]       ; pin_out          ;
+; |DistanceMeasure|temp_ADC_OUT[3]       ; |DistanceMeasure|temp_ADC_OUT[3]       ; pin_out          ;
+; |DistanceMeasure|temp_ADC_OUT[5]       ; |DistanceMeasure|temp_ADC_OUT[5]       ; pin_out          ;
+; |DistanceMeasure|temp_ADC_OUT[7]       ; |DistanceMeasure|temp_ADC_OUT[7]       ; pin_out          ;
+; |DistanceMeasure|temp_ADC_OUT[9]       ; |DistanceMeasure|temp_ADC_OUT[9]       ; pin_out          ;
+; |DistanceMeasure|temp_ADC_OUT[11]      ; |DistanceMeasure|temp_ADC_OUT[11]      ; pin_out          ;
+; |DistanceMeasure|ADC:ADC0|ADC_DOUT[1]  ; |DistanceMeasure|ADC:ADC0|ADC_DOUT[1]  ; regout           ;
+; |DistanceMeasure|ADC:ADC0|ADC_DOUT[3]  ; |DistanceMeasure|ADC:ADC0|ADC_DOUT[3]  ; regout           ;
+; |DistanceMeasure|ADC:ADC0|ADC_DOUT[5]  ; |DistanceMeasure|ADC:ADC0|ADC_DOUT[5]  ; regout           ;
+; |DistanceMeasure|ADC:ADC0|ADC_DOUT[7]  ; |DistanceMeasure|ADC:ADC0|ADC_DOUT[7]  ; regout           ;
+; |DistanceMeasure|ADC:ADC0|ADC_DOUT[9]  ; |DistanceMeasure|ADC:ADC0|ADC_DOUT[9]  ; regout           ;
+; |DistanceMeasure|ADC:ADC0|ADC_DOUT[11] ; |DistanceMeasure|ADC:ADC0|ADC_DOUT[11] ; regout           ;
++----------------------------------------+----------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                           ;
++----------------------------------------+----------------------------------------+------------------+
+; Node Name                              ; Output Port Name                       ; Output Port Type ;
++----------------------------------------+----------------------------------------+------------------+
+; |DistanceMeasure|temp_ADC_OUT[0]       ; |DistanceMeasure|temp_ADC_OUT[0]       ; pin_out          ;
+; |DistanceMeasure|temp_ADC_OUT[1]       ; |DistanceMeasure|temp_ADC_OUT[1]       ; pin_out          ;
+; |DistanceMeasure|temp_ADC_OUT[3]       ; |DistanceMeasure|temp_ADC_OUT[3]       ; pin_out          ;
+; |DistanceMeasure|temp_ADC_OUT[5]       ; |DistanceMeasure|temp_ADC_OUT[5]       ; pin_out          ;
+; |DistanceMeasure|temp_ADC_OUT[7]       ; |DistanceMeasure|temp_ADC_OUT[7]       ; pin_out          ;
+; |DistanceMeasure|temp_ADC_OUT[9]       ; |DistanceMeasure|temp_ADC_OUT[9]       ; pin_out          ;
+; |DistanceMeasure|temp_ADC_OUT[10]      ; |DistanceMeasure|temp_ADC_OUT[10]      ; pin_out          ;
+; |DistanceMeasure|temp_ADC_OUT[11]      ; |DistanceMeasure|temp_ADC_OUT[11]      ; pin_out          ;
+; |DistanceMeasure|ADC:ADC0|ADC_DOUT[1]  ; |DistanceMeasure|ADC:ADC0|ADC_DOUT[1]  ; regout           ;
+; |DistanceMeasure|ADC:ADC0|ADC_DOUT[0]  ; |DistanceMeasure|ADC:ADC0|ADC_DOUT[0]  ; regout           ;
+; |DistanceMeasure|ADC:ADC0|ADC_DOUT[3]  ; |DistanceMeasure|ADC:ADC0|ADC_DOUT[3]  ; regout           ;
+; |DistanceMeasure|ADC:ADC0|ADC_DOUT[5]  ; |DistanceMeasure|ADC:ADC0|ADC_DOUT[5]  ; regout           ;
+; |DistanceMeasure|ADC:ADC0|ADC_DOUT[7]  ; |DistanceMeasure|ADC:ADC0|ADC_DOUT[7]  ; regout           ;
+; |DistanceMeasure|ADC:ADC0|ADC_DOUT[9]  ; |DistanceMeasure|ADC:ADC0|ADC_DOUT[9]  ; regout           ;
+; |DistanceMeasure|ADC:ADC0|ADC_DOUT[10] ; |DistanceMeasure|ADC:ADC0|ADC_DOUT[10] ; regout           ;
+; |DistanceMeasure|ADC:ADC0|ADC_DOUT[11] ; |DistanceMeasure|ADC:ADC0|ADC_DOUT[11] ; regout           ;
++----------------------------------------+----------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Wed Sep 23 17:46:20 2020
+Info: Command: quartus_sim --simulation_results_format=VWF DistanceMeasure -c DistanceMeasure_qsim
+Info (324025): Using vector source file "D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/Waveform.vwf"
+Warning (328012): Can't find signal in vector source file for input pin "|DistanceMeasure|CLOCK_50M"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      69.81 %
+Info (328052): Number of transitions in simulation is 1861
+Info (324045): Vector file DistanceMeasure_qsim.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4445 megabytes
+    Info: Processing ended: Wed Sep 23 17:46:21 2020
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

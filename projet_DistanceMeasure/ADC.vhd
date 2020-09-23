@@ -25,10 +25,10 @@ LIBRARY work;
 ENTITY ADC IS 
 	PORT
 	(
-		ADC_CS : out std_logic;
+		ADC_CS_N : out std_logic;
 		ADC_SCLK : in std_logic;--ADC clock
 		ADC_DIN : in std_logic;
-		ADC_DOUT : out std_logic_vector (11 downto 0)
+		ADC_DOUT : out std_logic_vector (11 downto 0) := "000000000000"
 		--ADC_SADDR : out std_logic;--channel address (For this project we use channel 1)
 		--ADC_CS_N : out std_logic--this signal activate the ADC chip (ADC_CS_N)
 	);
@@ -38,22 +38,18 @@ ARCHITECTURE Behavioral OF ADC IS
 
 signal dato_temp : std_logic_vector (15 downto 0);
 signal enable : std_logic;
-signal RST : std_logic;
 BEGIN 
-ADC_CS <= enable;
+ADC_CS_N <= enable;
+
 	process(ADC_SCLK)
 	begin
 		if rising_edge(ADC_SCLK) then
 
 			--This is the actual shift register
-			if (RST = '1') then
-				dato_temp <= (others => '0');
-			else
 				dato_temp(0) <= ADC_DIN;
 				for i in 1 to 15 loop
 					dato_temp(i) <= dato_temp(i-1);
 				end loop;
-			end if;
 		end if;
 	end process;
 --fDiv1: freq_div port map (clock_in=>CLOCK_50MHZ,clock_out=>ADC_SCLK);
@@ -69,17 +65,15 @@ ADC_CS <= enable;
 		--This process activate the "enable" signal every 16 clock periods
 		if rising_edge(ADC_SCLK) then
 			
-			if (RST = '1') then
-			temp := 0;
-			enable <= '0';
-			else
+
 				temp := temp + 1;
 				if (temp = 16) then
 					enable <= '1';
+					temp := 0;
 				else
 					enable <= '0';
+					
 				end if;
-			end if;
 		end if;
 
 		end process;
@@ -89,14 +83,9 @@ ADC_CS <= enable;
 	process(ADC_SCLK)
 		begin
 			if rising_edge(ADC_SCLK) then
-
-				if (RST = '1') then
-					ADC_DOUT <= (others => '0');
-				else
 					if (enable = '1') then
 						ADC_DOUT <= dato_temp(11 downto 0);
 					end if;
-				end if;
 			end if;
 
 		end process;

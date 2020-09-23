@@ -1,0 +1,73 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "09/23/2020 22:16:59"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    DistanceMeasure
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module DistanceMeasure_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg CLOCK_25M;
+reg CLOCK_50M;
+reg ext_ADC_IN;
+// wires                                               
+wire ext_ADC_CS;
+wire ext_ADC_SCLK;
+wire [11:0] temp_ADC_OUT;
+wire [3:0] temp_DigitDecade;
+wire [3:0] temp_DigitHundredth;
+wire [3:0] temp_DigitTenth;
+wire [3:0] temp_DigitUnit;
+
+// assign statements (if any)                          
+DistanceMeasure i1 (
+// port map - connection between master ports and signals/registers   
+	.CLOCK_25M(CLOCK_25M),
+	.CLOCK_50M(CLOCK_50M),
+	.ext_ADC_CS(ext_ADC_CS),
+	.ext_ADC_IN(ext_ADC_IN),
+	.ext_ADC_SCLK(ext_ADC_SCLK),
+	.temp_ADC_OUT(temp_ADC_OUT),
+	.temp_DigitDecade(temp_DigitDecade),
+	.temp_DigitHundredth(temp_DigitHundredth),
+	.temp_DigitTenth(temp_DigitTenth),
+	.temp_DigitUnit(temp_DigitUnit)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+
+// CLOCK_25M
+initial
+begin
+	CLOCK_25M = 1'b0;
+end 
+initial 
+begin 
+#1000000 $finish;
+end 
+endmodule
+
