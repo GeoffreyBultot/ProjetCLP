@@ -35,7 +35,49 @@
 # -- Loading package MATH_REAL
 # -- Compiling entity rawTo4Digit
 # -- Compiling architecture Behavioral of rawTo4Digit
+# vcom -93 -work work {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/multiplex7seg4digit.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity multiplex7seg4digit
+# -- Compiling architecture behav of multiplex7seg4digit
 # 
+vsim work.multiplex7seg4digit
+# vsim work.multiplex7seg4digit 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.multiplex7seg4digit(behav)
+vsim -view vsim.wlf
+# vsim -view vsim.wlf 
+# ** Note: (vish-4074) File vsim.wlf is still open, viewing file in live viewing mode.
+# 
+# vsim.wlf opened as dataset "vsim"
+
+vsim -view waves.wlf
+# vsim -view waves.wlf 
+# dataset open: file not found: waves.wlf
+vsim -view waves.do
+# vsim -view waves.do 
+# dataset open: file not found: waves.do
+vsim -view wave.do
+# vsim -view wave.do 
+# WLF Error: Bad initial WLF parcel. WLF file is corrupt.
+# Cannot open file: wave.do
+view wave.do
+# window name wave.do does not exist
+file wave.do
+# bad option "wave.do": must be atime, attributes, channels, copy, delete, dirname, executable, exists, extension, isdirectory, isfile, join, link, lstat, mtime, mkdir, nativename, normalize, owned, pathtype, readable, readlink, rename, rootname, separator, size, split, stat, system, tail, type, volumes, or writable
+do wave.do
+# .main_pane.wave.interior.cs.body.pw.wf
+# 1
+# 1
+# 1
+# 1
+# 1
 vsim work.distancemeasure
 # vsim work.distancemeasure 
 # Loading std.standard
@@ -46,33 +88,101 @@ vsim work.distancemeasure
 # Loading work.adc(behavioral)
 # Loading ieee.math_real(body)
 # Loading work.rawto4digit(behavioral)
+# Loading work.multiplex7seg4digit(behav)
+do wave.do
+# .main_pane.wave.interior.cs.body.pw.wf
+# multiplex7seg4digit
+# ** Error: Netname is not editable or not present in the active waveform window
+# Usage: wave modify -driver <freeze|deposit|drive|expectedOutput> -pattern clock -initialvalue <value> -period <Time> -dutycycle <Time> -starttime <Time> -endtime <Time> netName
+# Error in macro ./wave.do line 4
+# Netname is not editable or not present in the active waveform window
+# Usage: wave modify -driver <freeze|deposit|drive|expectedOutput> -pattern clock -initialvalue <value> -period <Time> -dutycycle <Time> -starttime <Time> -endtime <Time> netName
+#     while executing
+# "wave modify -driver freeze -pattern clock -initialvalue U -period 10ns -dutycycle 50 -starttime 0ns -endtime 1000ns Edit:/multiplex7seg4digit/Clock250..."
+do wave.do
+# .main_pane.wave.interior.cs.body.pw.wf
+# ** Error: /multiplex7seg4digit/clock2500khz already exists in the wave, cannot add twice
+# Usage: wave create -pattern <clock|constant|random|repeater|counter|none> <args>
+# See Command Reference manual for pattern specific <args>
+# Error in macro ./wave.do line 3
+# /multiplex7seg4digit/clock2500khz already exists in the wave, cannot add twice
+# Usage: wave create -pattern <clock|constant|random|repeater|counter|none> <args>
+# See Command Reference manual for pattern specific <args>
+#     while executing
+# "wave create -driver freeze -pattern clock -initialvalue U -period 10ns -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/multiplex7seg4digit/Clock2500..."
+clear
+# invalid command name "clear"
+flush
+# wrong # args: should be "flush channelId"
+do wave.do
+# .main_pane.wave.interior.cs.body.pw.wf
+# multiplex7seg4digit
+# ** Error: Netname is not editable or not present in the active waveform window
+# Usage: wave modify -driver <freeze|deposit|drive|expectedOutput> -pattern clock -initialvalue <value> -period <Time> -dutycycle <Time> -starttime <Time> -endtime <Time> netName
+# Error in macro ./wave.do line 4
+# Netname is not editable or not present in the active waveform window
+# Usage: wave modify -driver <freeze|deposit|drive|expectedOutput> -pattern clock -initialvalue <value> -period <Time> -dutycycle <Time> -starttime <Time> -endtime <Time> netName
+#     while executing
+# "wave modify -driver freeze -pattern clock -initialvalue U -period 10ns -dutycycle 50 -starttime 0ns -endtime 1000ns Edit:/multiplex7seg4digit/Clock250..."
+vsim work.multiplex7seg4digit
+# vsim work.multiplex7seg4digit 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.multiplex7seg4digit(behav)
+do wave.do
+# .main_pane.wave.interior.cs.body.pw.wf
+# distancemeasure
+# distancemeasure
+# distancemeasure
+# 1
+# distancemeasure
+# 1
+# distancemeasure
+# 1
+# distancemeasure
+# 1
+# 1
+add DigitOUT
+# bad option "DigitOUT": should be one of...
+#   add atv ?options? ?arg arg ...?
+#   add button text action ?disable? ?options? ?help?
+#   add dataflow ?options? ?arg arg ...?
+#   add lists ?options? ?arg arg ...?
+#   add log ?options? ?arg arg ...?
+#   add memory options ?arg arg ...?
+#   add message ?options? ?arg arg ...?
+#   add monitor ?options? ?arg arg ...?
+#   add schematic ?options? ?arg arg ...?
+#   add testbrowser ?options? ?arg arg ...?
+#   add virtual ?options? ?arg arg ...?
+#   add watch ?options? ?arg arg ...?
+#   add wave ?options? ?arg arg ...?
+add wave DigitOUT
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: geoff  Hostname: DESKTOP-G6OJVDD  ProcessID: 19388
+# 
+#           Attempting to use alternate WLF file "./wlfte8vv76".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlfte8vv76
+# 
+run
+run
+run
+add wave DigitSelection
 vlog -reportprogress 300 -work work {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/simulation/modelsim/DistanceMeasure.vo}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module DistanceMeasure
 # 
 # Top level modules:
 # 	DistanceMeasure
-wave create -driver freeze -pattern clock -initialvalue U -period 2ns -dutycycle 50 -starttime 0ns -endtime 1000ns sim:/distancemeasure/CLOCK_25M
-add wave -position insertpoint  \
-sim:/distancemeasure/ext_ADC_CS \
-sim:/distancemeasure/ext_ADC_SCLK \
-sim:/distancemeasure/ext_ADC_IN \
-sim:/distancemeasure/temp_ADC_OUT \
-sim:/distancemeasure/temp_DigitDecade \
-sim:/distancemeasure/temp_DigitUnit \
-sim:/distancemeasure/temp_DigitTenth \
-sim:/distancemeasure/temp_DigitHundredth
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-# 
-#           File in use by: geoff  Hostname: DESKTOP-G6OJVDD  ProcessID: 19388
-# 
-#           Attempting to use alternate WLF file "./wlftsm90d5".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-# 
-#           Using alternate file: ./wlftsm90d5
-# 
-wave create -driver freeze -pattern clock -initialvalue U -period 5ns -dutycycle 50 -starttime 0ns -endtime 1000ns sim:/distancemeasure/ext_ADC_IN
-add wave -position 1 -format Logic -height 17 -editable 2 Edit:/distancemeasure/ext_ADC_IN
+restart -f
+run
+run
+run
 run
 run
 run
@@ -82,37 +192,31 @@ run
 run
 run
 restart -f
+vlog -reportprogress 300 -work work {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/simulation/modelsim/DistanceMeasure.vo}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module DistanceMeasure
+# 
+# Top level modules:
+# 	DistanceMeasure
 run
-run
-run
-# Break in Process line__43 at D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/rawTo4Digit.vhd line 59
-step
-step
-step
-step
-step
-step
-step -out -current
-step -over
-step -over
-step
-step
-step
-step
-step
-step
-step
-step
-run
-# Break in Process line__43 at D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/rawTo4Digit.vhd line 59
-run
-# Break in Process line__43 at D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/rawTo4Digit.vhd line 59
-run
-# Break in Process line__43 at D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/rawTo4Digit.vhd line 59
-run
-# Break in Process line__43 at D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/rawTo4Digit.vhd line 59
+# Break in Process refreshCurrentDigit at D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/multiplex7seg4digit.vhd line 55
 run
 run
 run
 run
-wave editwrite -file {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/simulation/modelsim/wave.do}
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/multiplex7seg4digit/sig_DigitSelection
+run
+restart -f
+run
+add wave -position insertpoint  \
+sim:/multiplex7seg4digit/currentDigit
+run
+run
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/simulation/modelsim/wave.do}
+wave editwrite -file {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/simulation/modelsim/wave.do} -append

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DistanceMeasure
-Wed Sep 23 23:02:54 2020
+Thu Sep 24 14:56:47 2020
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -13,17 +13,19 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Div0
- 10. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Mod0
- 11. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Div1
- 12. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Mod1
- 13. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Div2
- 14. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Mod2
- 15. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Div3
- 16. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Mod3
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Div0
+ 12. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Mod0
+ 13. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Div1
+ 14. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Mod1
+ 15. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Div2
+ 16. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Mod2
+ 17. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Div3
+ 18. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Mod3
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -49,16 +51,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Sep 23 23:02:54 2020      ;
+; Analysis & Synthesis Status        ; Successful - Thu Sep 24 14:56:47 2020      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; DistanceMeasure                            ;
 ; Top-level Entity Name              ; DistanceMeasure                            ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 3,255                                      ;
-;     Total combinational functions  ; 3,231                                      ;
-;     Dedicated logic registers      ; 30                                         ;
-; Total registers                    ; 30                                         ;
-; Total pins                         ; 33                                         ;
+; Total logic elements               ; 3,247                                      ;
+;     Total combinational functions  ; 3,223                                      ;
+;     Dedicated logic registers      ; 51                                         ;
+; Total registers                    ; 51                                         ;
+; Total pins                         ; 45                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -172,6 +174,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; DistanceMeasure.vhd              ; yes             ; User VHDL File               ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/DistanceMeasure.vhd        ;         ;
 ; ADC.vhd                          ; yes             ; User VHDL File               ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/ADC.vhd                    ;         ;
 ; rawTo4Digit.vhd                  ; yes             ; User VHDL File               ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/rawTo4Digit.vhd            ;         ;
+; multiplex7seg4digit.vhd          ; yes             ; User VHDL File               ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/multiplex7seg4digit.vhd    ;         ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/lpm_divide.tdf                                                                                                                      ;         ;
 ; abs_divider.inc                  ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/abs_divider.inc                                                                                                                     ;         ;
 ; sign_div_unsign.inc              ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/sign_div_unsign.inc                                                                                                                 ;         ;
@@ -195,28 +198,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                                                                               ;
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 3,255                                                                                                                                               ;
+; Estimated Total logic elements              ; 3,247                                                                                                                                               ;
 ;                                             ;                                                                                                                                                     ;
-; Total combinational functions               ; 3231                                                                                                                                                ;
+; Total combinational functions               ; 3223                                                                                                                                                ;
 ; Logic element usage by number of LUT inputs ;                                                                                                                                                     ;
-;     -- 4 input functions                    ; 820                                                                                                                                                 ;
-;     -- 3 input functions                    ; 1151                                                                                                                                                ;
-;     -- <=2 input functions                  ; 1260                                                                                                                                                ;
+;     -- 4 input functions                    ; 810                                                                                                                                                 ;
+;     -- 3 input functions                    ; 1169                                                                                                                                                ;
+;     -- <=2 input functions                  ; 1244                                                                                                                                                ;
 ;                                             ;                                                                                                                                                     ;
 ; Logic elements by mode                      ;                                                                                                                                                     ;
-;     -- normal mode                          ; 2141                                                                                                                                                ;
+;     -- normal mode                          ; 2133                                                                                                                                                ;
 ;     -- arithmetic mode                      ; 1090                                                                                                                                                ;
 ;                                             ;                                                                                                                                                     ;
-; Total registers                             ; 30                                                                                                                                                  ;
-;     -- Dedicated logic registers            ; 30                                                                                                                                                  ;
+; Total registers                             ; 51                                                                                                                                                  ;
+;     -- Dedicated logic registers            ; 51                                                                                                                                                  ;
 ;     -- I/O registers                        ; 0                                                                                                                                                   ;
 ;                                             ;                                                                                                                                                     ;
-; I/O pins                                    ; 33                                                                                                                                                  ;
+; I/O pins                                    ; 45                                                                                                                                                  ;
 ; Embedded Multiplier 9-bit elements          ; 0                                                                                                                                                   ;
-; Maximum fan-out node                        ; rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_18_result_int[19]~36 ;
+; Maximum fan-out node                        ; rawTo4Digit:Converter0|lpm_divide:Mod2|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_18_result_int[19]~36 ;
 ; Maximum fan-out                             ; 57                                                                                                                                                  ;
-; Total fan-out                               ; 9050                                                                                                                                                ;
-; Average fan-out                             ; 2.72                                                                                                                                                ;
+; Total fan-out                               ; 9119                                                                                                                                                ;
+; Average fan-out                             ; 2.71                                                                                                                                                ;
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -225,18 +228,19 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                           ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |DistanceMeasure                          ; 3231 (0)          ; 30 (0)       ; 0           ; 0            ; 0       ; 0         ; 33   ; 0            ; |DistanceMeasure                                                                                                                                              ;              ;
+; |DistanceMeasure                          ; 3223 (0)          ; 51 (0)       ; 0           ; 0            ; 0       ; 0         ; 45   ; 0            ; |DistanceMeasure                                                                                                                                              ;              ;
 ;    |ADC:ADC0|                             ; 8 (8)             ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|ADC:ADC0                                                                                                                                     ;              ;
-;    |rawTo4Digit:Converter0|               ; 3223 (38)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0                                                                                                                       ;              ;
-;       |lpm_divide:Div0|                   ; 393 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div0                                                                                                       ;              ;
-;          |lpm_divide_dkm:auto_generated|  ; 393 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div0|lpm_divide_dkm:auto_generated                                                                         ;              ;
-;             |sign_div_unsign_5nh:divider| ; 393 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div0|lpm_divide_dkm:auto_generated|sign_div_unsign_5nh:divider                                             ;              ;
-;                |alt_u_div_u9f:divider|    ; 393 (392)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div0|lpm_divide_dkm:auto_generated|sign_div_unsign_5nh:divider|alt_u_div_u9f:divider                       ;              ;
+;    |multiplex7seg4digit:multiplex0|       ; 25 (25)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|multiplex7seg4digit:multiplex0                                                                                                               ;              ;
+;    |rawTo4Digit:Converter0|               ; 3190 (38)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0                                                                                                                       ;              ;
+;       |lpm_divide:Div0|                   ; 392 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div0                                                                                                       ;              ;
+;          |lpm_divide_dkm:auto_generated|  ; 392 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div0|lpm_divide_dkm:auto_generated                                                                         ;              ;
+;             |sign_div_unsign_5nh:divider| ; 392 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div0|lpm_divide_dkm:auto_generated|sign_div_unsign_5nh:divider                                             ;              ;
+;                |alt_u_div_u9f:divider|    ; 392 (391)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div0|lpm_divide_dkm:auto_generated|sign_div_unsign_5nh:divider|alt_u_div_u9f:divider                       ;              ;
 ;                   |add_sub_8pc:add_sub_1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div0|lpm_divide_dkm:auto_generated|sign_div_unsign_5nh:divider|alt_u_div_u9f:divider|add_sub_8pc:add_sub_1 ;              ;
-;       |lpm_divide:Div1|                   ; 242 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div1                                                                                                       ;              ;
-;          |lpm_divide_uim:auto_generated|  ; 242 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_uim:auto_generated                                                                         ;              ;
-;             |sign_div_unsign_mlh:divider| ; 242 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_uim:auto_generated|sign_div_unsign_mlh:divider                                             ;              ;
-;                |alt_u_div_07f:divider|    ; 242 (242)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_uim:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_07f:divider                       ;              ;
+;       |lpm_divide:Div1|                   ; 240 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div1                                                                                                       ;              ;
+;          |lpm_divide_uim:auto_generated|  ; 240 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_uim:auto_generated                                                                         ;              ;
+;             |sign_div_unsign_mlh:divider| ; 240 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_uim:auto_generated|sign_div_unsign_mlh:divider                                             ;              ;
+;                |alt_u_div_07f:divider|    ; 240 (240)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_uim:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_07f:divider                       ;              ;
 ;       |lpm_divide:Div2|                   ; 201 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div2                                                                                                       ;              ;
 ;          |lpm_divide_uim:auto_generated|  ; 201 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div2|lpm_divide_uim:auto_generated                                                                         ;              ;
 ;             |sign_div_unsign_mlh:divider| ; 201 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div2|lpm_divide_uim:auto_generated|sign_div_unsign_mlh:divider                                             ;              ;
@@ -245,14 +249,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |lpm_divide_uim:auto_generated|  ; 159 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div3|lpm_divide_uim:auto_generated                                                                         ;              ;
 ;             |sign_div_unsign_mlh:divider| ; 159 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div3|lpm_divide_uim:auto_generated|sign_div_unsign_mlh:divider                                             ;              ;
 ;                |alt_u_div_07f:divider|    ; 159 (159)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div3|lpm_divide_uim:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_07f:divider                       ;              ;
-;       |lpm_divide:Mod0|                   ; 651 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod0                                                                                                       ;              ;
-;          |lpm_divide_gcm:auto_generated|  ; 651 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_gcm:auto_generated                                                                         ;              ;
-;             |sign_div_unsign_6nh:divider| ; 651 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider                                             ;              ;
-;                |alt_u_div_v9f:divider|    ; 651 (651)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider                       ;              ;
-;       |lpm_divide:Mod1|                   ; 600 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod1                                                                                                       ;              ;
-;          |lpm_divide_gcm:auto_generated|  ; 600 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_gcm:auto_generated                                                                         ;              ;
-;             |sign_div_unsign_6nh:divider| ; 600 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider                                             ;              ;
-;                |alt_u_div_v9f:divider|    ; 600 (600)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider                       ;              ;
+;       |lpm_divide:Mod0|                   ; 634 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod0                                                                                                       ;              ;
+;          |lpm_divide_gcm:auto_generated|  ; 634 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_gcm:auto_generated                                                                         ;              ;
+;             |sign_div_unsign_6nh:divider| ; 634 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider                                             ;              ;
+;                |alt_u_div_v9f:divider|    ; 634 (634)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider                       ;              ;
+;       |lpm_divide:Mod1|                   ; 587 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod1                                                                                                       ;              ;
+;          |lpm_divide_gcm:auto_generated|  ; 587 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_gcm:auto_generated                                                                         ;              ;
+;             |sign_div_unsign_6nh:divider| ; 587 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider                                             ;              ;
+;                |alt_u_div_v9f:divider|    ; 587 (587)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider                       ;              ;
 ;       |lpm_divide:Mod2|                   ; 522 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod2                                                                                                       ;              ;
 ;          |lpm_divide_gcm:auto_generated|  ; 522 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod2|lpm_divide_gcm:auto_generated                                                                         ;              ;
 ;             |sign_div_unsign_6nh:divider| ; 522 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod2|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider                                             ;              ;
@@ -265,12 +269,22 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
++-------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                  ;
++--------------------------------------------+----------------------------------------+
+; Register name                              ; Reason for Removal                     ;
++--------------------------------------------+----------------------------------------+
+; multiplex7seg4digit:multiplex0|DigitOUT[0] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 1      ;                                        ;
++--------------------------------------------+----------------------------------------+
+
+
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 30    ;
+; Total registers                              ; 51    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -278,6 +292,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Clock Enable       ; 12    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |DistanceMeasure|multiplex7seg4digit:multiplex0|currentDigit[3] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------+
@@ -479,7 +502,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Wed Sep 23 23:02:35 2020
+    Info: Processing started: Thu Sep 24 14:56:28 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DistanceMeasure -c DistanceMeasure
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file distancemeasure.vhd
@@ -494,9 +517,13 @@ Info (12021): Found 2 design units, including 1 entities, in source file freq_di
 Info (12021): Found 2 design units, including 1 entities, in source file rawto4digit.vhd
     Info (12022): Found design unit 1: rawTo4Digit-Behavioral
     Info (12023): Found entity 1: rawTo4Digit
+Info (12021): Found 2 design units, including 1 entities, in source file multiplex7seg4digit.vhd
+    Info (12022): Found design unit 1: multiplex7seg4digit-behav
+    Info (12023): Found entity 1: multiplex7seg4digit
 Info (12127): Elaborating entity "DistanceMeasure" for the top level hierarchy
 Info (12128): Elaborating entity "ADC" for hierarchy "ADC:ADC0"
 Info (12128): Elaborating entity "rawTo4Digit" for hierarchy "rawTo4Digit:Converter0"
+Info (12128): Elaborating entity "multiplex7seg4digit" for hierarchy "multiplex7seg4digit:multiplex0"
 Info (278001): Inferred 8 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "rawTo4Digit:Converter0|Div0"
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "rawTo4Digit:Converter0|Mod0"
@@ -546,19 +573,11 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_mlh
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_07f.tdf
     Info (12023): Found entity 1: alt_u_div_07f
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "digitOUT[0]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (17016): Found the following redundant logic cells in design
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div0|lpm_divide_dkm:auto_generated|sign_div_unsign_5nh:divider|alt_u_div_u9f:divider|add_sub_6_result_int[0]~14"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_20_result_int[0]~0"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_11_result_int[0]~24"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_12_result_int[0]~26"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_13_result_int[0]~28"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_14_result_int[0]~30"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_15_result_int[0]~32"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_16_result_int[0]~34"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_17_result_int[0]~36"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_18_result_int[0]~38"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_19_result_int[0]~40"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_19_result_int[0]~0"
     Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_uim:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_07f:divider|add_sub_11_result_int[0]~10"
     Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_uim:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_07f:divider|add_sub_12_result_int[0]~10"
     Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_uim:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_07f:divider|add_sub_13_result_int[0]~10"
@@ -568,21 +587,8 @@ Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_uim:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_07f:divider|add_sub_17_result_int[0]~10"
     Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_uim:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_07f:divider|add_sub_18_result_int[0]~10"
     Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_uim:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_07f:divider|add_sub_19_result_int[0]~10"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_20_result_int[0]~0"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_6_result_int[0]~14"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_7_result_int[0]~16"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_8_result_int[0]~18"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_9_result_int[0]~20"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_10_result_int[0]~22"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_11_result_int[0]~24"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_12_result_int[0]~26"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_13_result_int[0]~28"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_19_result_int[0]~0"
     Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_14_result_int[0]~30"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_15_result_int[0]~32"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_16_result_int[0]~34"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_17_result_int[0]~36"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_18_result_int[0]~38"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_gcm:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_v9f:divider|add_sub_19_result_int[0]~40"
     Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div2|lpm_divide_uim:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_07f:divider|add_sub_6_result_int[0]~10"
     Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div2|lpm_divide_uim:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_07f:divider|add_sub_7_result_int[0]~10"
     Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div2|lpm_divide_uim:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_07f:divider|add_sub_8_result_int[0]~10"
@@ -633,13 +639,13 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "CLOCK_50M"
-Info (21057): Implemented 3288 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3292 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 30 output pins
-    Info (21061): Implemented 3255 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4648 megabytes
-    Info: Processing ended: Wed Sep 23 23:02:54 2020
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 3247 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4647 megabytes
+    Info: Processing ended: Thu Sep 24 14:56:47 2020
     Info: Elapsed time: 00:00:19
     Info: Total CPU time (on all processors): 00:00:19
 

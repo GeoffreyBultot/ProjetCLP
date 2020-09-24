@@ -1,10 +1,23 @@
 |DistanceMeasure
 CLOCK_50M => ~NO_FANOUT~
 CLOCK_25M => ADC:ADC0.ADC_SCLK
+CLOCK_25M => multiplex7seg4digit:multiplex0.Clock2500kHZ
 CLOCK_25M => ext_ADC_SCLK.DATAIN
 ext_ADC_CS <= ADC:ADC0.ADC_CS_N
 ext_ADC_SCLK <= CLOCK_25M.DB_MAX_OUTPUT_PORT_TYPE
 ext_ADC_IN => ADC:ADC0.ADC_DIN
+SelectionDigit[0] <= multiplex7seg4digit:multiplex0.DigitSelection[0]
+SelectionDigit[1] <= multiplex7seg4digit:multiplex0.DigitSelection[1]
+SelectionDigit[2] <= multiplex7seg4digit:multiplex0.DigitSelection[2]
+SelectionDigit[3] <= multiplex7seg4digit:multiplex0.DigitSelection[3]
+digitOUT[0] <= multiplex7seg4digit:multiplex0.DigitOUT[0]
+digitOUT[1] <= multiplex7seg4digit:multiplex0.DigitOUT[1]
+digitOUT[2] <= multiplex7seg4digit:multiplex0.DigitOUT[2]
+digitOUT[3] <= multiplex7seg4digit:multiplex0.DigitOUT[3]
+digitOUT[4] <= multiplex7seg4digit:multiplex0.DigitOUT[4]
+digitOUT[5] <= multiplex7seg4digit:multiplex0.DigitOUT[5]
+digitOUT[6] <= multiplex7seg4digit:multiplex0.DigitOUT[6]
+digitOUT[7] <= multiplex7seg4digit:multiplex0.DigitOUT[7]
 temp_ADC_OUT[0] <= ADC:ADC0.ADC_DOUT[0]
 temp_ADC_OUT[1] <= ADC:ADC0.ADC_DOUT[1]
 temp_ADC_OUT[2] <= ADC:ADC0.ADC_DOUT[2]
@@ -123,5 +136,40 @@ DigitHundredth[0] <= DigitHundredth.DB_MAX_OUTPUT_PORT_TYPE
 DigitHundredth[1] <= DigitHundredth.DB_MAX_OUTPUT_PORT_TYPE
 DigitHundredth[2] <= DigitHundredth.DB_MAX_OUTPUT_PORT_TYPE
 DigitHundredth[3] <= DigitHundredth.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DistanceMeasure|multiplex7seg4digit:multiplex0
+Clock2500kHZ => clock_RefreshMux.CLK
+Clock2500kHZ => temp[0].CLK
+Clock2500kHZ => temp[1].CLK
+Clock2500kHZ => temp[2].CLK
+DigitDecade[0] => Mux3.IN0
+DigitDecade[1] => Mux2.IN0
+DigitDecade[2] => Mux1.IN0
+DigitDecade[3] => Mux0.IN0
+DigitUnit[0] => Mux3.IN1
+DigitUnit[1] => Mux2.IN1
+DigitUnit[2] => Mux1.IN1
+DigitUnit[3] => Mux0.IN1
+DigitTenth[0] => Mux3.IN2
+DigitTenth[1] => Mux2.IN2
+DigitTenth[2] => Mux1.IN2
+DigitTenth[3] => Mux0.IN2
+DigitHundredth[0] => Mux3.IN3
+DigitHundredth[1] => Mux2.IN3
+DigitHundredth[2] => Mux1.IN3
+DigitHundredth[3] => Mux0.IN3
+DigitSelection[0] <= sig_DigitSelection[0].DB_MAX_OUTPUT_PORT_TYPE
+DigitSelection[1] <= sig_DigitSelection[1].DB_MAX_OUTPUT_PORT_TYPE
+DigitSelection[2] <= sig_DigitSelection[2].DB_MAX_OUTPUT_PORT_TYPE
+DigitSelection[3] <= sig_DigitSelection[3].DB_MAX_OUTPUT_PORT_TYPE
+DigitOUT[0] <= DigitOUT[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DigitOUT[1] <= DigitOUT[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DigitOUT[2] <= DigitOUT[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DigitOUT[3] <= DigitOUT[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DigitOUT[4] <= DigitOUT[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DigitOUT[5] <= DigitOUT[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DigitOUT[6] <= DigitOUT[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DigitOUT[7] <= DigitOUT[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

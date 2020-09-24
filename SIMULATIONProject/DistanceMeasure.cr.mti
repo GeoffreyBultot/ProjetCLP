@@ -1,0 +1,46 @@
+{D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/DistanceMeasure.vhd} {1 {vcom -work work -2002 -explicit {D:\geoff\OneDrive - Haute Ecole Bruxelles Brabant (HE2B)\Ecole 2020 - 2021\UE_SystemesEmbarques\CircuitsLogiqueProgrammable\Cours\ProjetCLP\projet_DistanceMeasure\DistanceMeasure.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity DistanceMeasure
+-- Compiling architecture Behavioral of DistanceMeasure
+
+} {} {}} {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/rawTo4Digit.vhd} {1 {vcom -work work -2002 -explicit {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/rawTo4Digit.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package MATH_REAL
+-- Compiling entity rawTo4Digit
+-- Compiling architecture Behavioral of rawTo4Digit
+
+} {} {}} {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/multiplex7seg4digit.vhd} {1 {vcom -work work -2002 -explicit {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/multiplex7seg4digit.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity multiplex7seg4digit
+-- Compiling architecture behav of multiplex7seg4digit
+
+} {} {}} {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/freq_div.vhd} {1 {vcom -work work -2002 -explicit {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/freq_div.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity freq_div
+-- Compiling architecture behavioral of freq_div
+
+} {} {}} {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/ADC.vhd} {1 {vcom -work work -2002 -explicit {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/ADC.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity ADC
+-- Compiling architecture Behavioral of ADC
+
+} {} {}}

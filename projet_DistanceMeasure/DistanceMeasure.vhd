@@ -30,6 +30,9 @@ ENTITY DistanceMeasure IS
 		ext_ADC_CS : out STD_LOGIC;
 		ext_ADC_SCLK: out STD_LOGIC; --sclk to adc
 		ext_ADC_IN : in STD_LOGIC; --in by ADC
+		SelectionDigit : out std_logic_vector (3 downto 0);
+		digitOUT : out std_logic_vector (7 downto 0);
+		
 		temp_ADC_OUT: out STD_LOGIC_vector (11 downto 0);
 		
 		temp_DigitDecade : out std_logic_vector (3 downto 0);
@@ -49,6 +52,12 @@ signal sig_ADC_IN :std_logic;
 signal sig_ADC_OUT :std_logic_vector (11 downto 0);
 
 
+
+signal sig_temp_DigitDecade : std_logic_vector (3 downto 0);
+signal sig_temp_DigitUnit : std_logic_vector (3 downto 0);
+signal sig_temp_DigitTenth : std_logic_vector (3 downto 0);
+signal sig_temp_DigitHundredth : std_logic_vector (3 downto 0);
+signal sig_DigitOUT : std_LOGIC_vector(7 downto 0);
 
 component freq_div is
 port( clock_in : in std_logic;
@@ -75,14 +84,29 @@ port(
 	);
 end component;
 
-
+component multiplex7seg4digit is
+port(	
+		Clock2500kHZ : in std_logic;
+		DigitDecade : in std_logic_vector (3 downto 0);
+		DigitUnit : in std_logic_vector (3 downto 0);
+		DigitTenth : in std_logic_vector (3 downto 0);
+		DigitHundredth : in std_logic_vector (3 downto 0);
+		DigitSelection : out std_logic_vector (3 downto 0);
+		DigitOUT : out std_logic_vector (7 downto 0)
+	);
+end component;
 
 BEGIN
 ext_ADC_CS<= sig_ADC_CS ;
 sig_ADC_IN<= ext_ADC_IN ;
 temp_ADC_OUT<= sig_ADC_OUT ;
-CLOck_ADC_2500khz <= CLOCK_25M;
+clock_ADC_2500khz <= CLOCK_25M;
 
+temp_DigitDecade  <= sig_temp_DigitDecade;
+temp_DigitUnit <= sig_temp_DigitUnit;
+temp_DigitTenth <= sig_temp_DigitTenth ;
+temp_DigitHundredth <= sig_temp_DigitHundredth;
+digitOUT <= sig_DigitOUT;
 --fd1 : freq_div port map (clock_in=>CLOCK_50M,clock_out=>clock_ADC_2500khz);
 
 ext_ADC_SCLK <= clock_ADC_2500khz;
@@ -95,10 +119,21 @@ ADC0 : ADC port map (
 
 Converter0 : rawTo4Digit port map (
 				RAW_VALUE_IN => sig_ADC_OUT,
-				DigitDecade => temp_DigitDecade,
-				DigitUnit => temp_DigitUnit,
-				DigitTenth => temp_DigitTenth,
-				DigitHundredth => temp_DigitHundredth
+				DigitDecade => sig_temp_DigitDecade,
+				DigitUnit => sig_temp_DigitUnit,
+				DigitTenth => sig_temp_DigitTenth,
+				DigitHundredth => sig_temp_DigitHundredth
 		);	
+
+multiplex0 : multiplex7seg4digit port map (
+			Clock2500kHZ => clock_ADC_2500khz,
+			DigitDecade => sig_temp_DigitDecade,
+			DigitUnit => sig_temp_DigitUnit,
+			DigitTenth => sig_temp_DigitTenth,
+			DigitHundredth => sig_temp_DigitHundredth,
+			DigitSelection => selectionDigit,
+			DigitOUT => sig_DigitOUT
+			
+		);
 
 END Behavioral;

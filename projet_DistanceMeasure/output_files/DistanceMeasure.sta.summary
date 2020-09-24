@@ -2,40 +2,76 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow 1200mV 85C Model Setup 'multiplex7seg4digit:multiplex0|clock_RefreshMux'
+Slack : -62.277
+TNS   : -249.434
+
 Type  : Slow 1200mV 85C Model Setup 'CLOCK_25M'
-Slack : -0.671
-TNS   : -5.180
+Slack : -1.022
+TNS   : -13.892
 
 Type  : Slow 1200mV 85C Model Hold 'CLOCK_25M'
-Slack : 0.359
+Slack : -0.008
+TNS   : -0.008
+
+Type  : Slow 1200mV 85C Model Hold 'multiplex7seg4digit:multiplex0|clock_RefreshMux'
+Slack : 0.357
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_25M'
 Slack : -3.000
-TNS   : -33.000
+TNS   : -37.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'multiplex7seg4digit:multiplex0|clock_RefreshMux'
+Slack : -1.000
+TNS   : -17.000
+
+Type  : Slow 1200mV 0C Model Setup 'multiplex7seg4digit:multiplex0|clock_RefreshMux'
+Slack : -55.565
+TNS   : -221.569
 
 Type  : Slow 1200mV 0C Model Setup 'CLOCK_25M'
-Slack : -0.484
-TNS   : -2.651
+Slack : -0.819
+TNS   : -9.959
 
 Type  : Slow 1200mV 0C Model Hold 'CLOCK_25M'
+Slack : 0.003
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'multiplex7seg4digit:multiplex0|clock_RefreshMux'
 Slack : 0.312
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_25M'
 Slack : -3.000
-TNS   : -33.000
+TNS   : -37.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'multiplex7seg4digit:multiplex0|clock_RefreshMux'
+Slack : -1.000
+TNS   : -17.000
+
+Type  : Fast 1200mV 0C Model Setup 'multiplex7seg4digit:multiplex0|clock_RefreshMux'
+Slack : -35.149
+TNS   : -137.343
 
 Type  : Fast 1200mV 0C Model Setup 'CLOCK_25M'
-Slack : 0.058
-TNS   : 0.000
+Slack : -0.150
+TNS   : -0.490
 
 Type  : Fast 1200mV 0C Model Hold 'CLOCK_25M'
+Slack : -0.112
+TNS   : -0.112
+
+Type  : Fast 1200mV 0C Model Hold 'multiplex7seg4digit:multiplex0|clock_RefreshMux'
 Slack : 0.187
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_25M'
 Slack : -3.000
-TNS   : -34.690
+TNS   : -39.128
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'multiplex7seg4digit:multiplex0|clock_RefreshMux'
+Slack : -1.000
+TNS   : -17.000
 
 ------------------------------------------------------------
