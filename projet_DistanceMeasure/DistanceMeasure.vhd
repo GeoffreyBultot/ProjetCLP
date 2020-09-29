@@ -100,14 +100,14 @@ BEGIN
 ext_ADC_CS<= sig_ADC_CS ;
 sig_ADC_IN<= ext_ADC_IN ;
 temp_ADC_OUT<= sig_ADC_OUT ;
-clock_ADC_2500khz <= CLOCK_25M;
+--clock_ADC_2500khz <= CLOCK_25M;
 
 temp_DigitDecade  <= sig_temp_DigitDecade;
 temp_DigitUnit <= sig_temp_DigitUnit;
 temp_DigitTenth <= sig_temp_DigitTenth ;
 temp_DigitHundredth <= sig_temp_DigitHundredth;
 digitOUT <= sig_DigitOUT;
---fd1 : freq_div port map (clock_in=>CLOCK_50M,clock_out=>clock_ADC_2500khz);
+fd1 : freq_div port map (clock_in=>CLOCK_50M,clock_out=>clock_ADC_2500khz);
 
 ext_ADC_SCLK <= clock_ADC_2500khz;
 

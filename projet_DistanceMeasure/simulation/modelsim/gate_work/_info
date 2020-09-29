@@ -1,0 +1,26 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\geoff\OneDrive - Haute Ecole Bruxelles Brabant (HE2B)\Ecole 2020 - 2021\UE_SystemesEmbarques\CircuitsLogiqueProgrammable\Cours\ProjetCLP\projet_DistanceMeasure\simulation\modelsim
+vDistanceMeasure
+!i10b 1
+!s100 Y::=n;f00FC56R`:jS9f92
+IX9^:_38oBn18nQU<FZz0O3
+Vdfj7jgSRANYF:mWY`eJ3m2
+Z1 dD:\geoff\OneDrive - Haute Ecole Bruxelles Brabant (HE2B)\Ecole 2020 - 2021\UE_SystemesEmbarques\CircuitsLogiqueProgrammable\Cours\ProjetCLP\projet_DistanceMeasure\simulation\modelsim
+w1601305779
+8DistanceMeasure.vo
+FDistanceMeasure.vo
+L0 31
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1601306581.116000
+!s107 DistanceMeasure.vo|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|DistanceMeasure.vo|
+!s101 -O0
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work +incdir+. -O0
+n@distance@measure

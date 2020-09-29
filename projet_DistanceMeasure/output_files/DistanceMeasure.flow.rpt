@@ -1,5 +1,5 @@
 Flow report for DistanceMeasure
-Thu Sep 24 14:58:05 2020
+Tue Sep 29 09:20:49 2020
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -40,18 +40,18 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Thu Sep 24 14:58:05 2020      ;
+; Flow Status                        ; Successful - Tue Sep 29 09:20:49 2020      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; DistanceMeasure                            ;
 ; Top-level Entity Name              ; DistanceMeasure                            ;
 ; Family                             ; Cyclone IV E                               ;
-; Device                             ; EP4CE22E22C6                               ;
+; Device                             ; EP4CE22F17C6                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 3,235 / 22,320 ( 14 % )                    ;
-;     Total combinational functions  ; 3,223 / 22,320 ( 14 % )                    ;
-;     Dedicated logic registers      ; 51 / 22,320 ( < 1 % )                      ;
-; Total registers                    ; 51                                         ;
-; Total pins                         ; 45 / 80 ( 56 % )                           ;
+; Total logic elements               ; 488 / 22,320 ( 2 % )                       ;
+;     Total combinational functions  ; 479 / 22,320 ( 2 % )                       ;
+;     Dedicated logic registers      ; 65 / 22,320 ( < 1 % )                      ;
+; Total registers                    ; 65                                         ;
+; Total pins                         ; 45 / 154 ( 29 % )                          ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0 / 608,256 ( 0 % )                        ;
 ; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                            ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/24/2020 14:56:29 ;
+; Start date & time ; 09/29/2020 09:20:09 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DistanceMeasure     ;
 +-------------------+---------------------+
@@ -75,13 +75,12 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 273063041728109.160095218919024 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 273063041728109.160136400915180 ; --            ; --          ; --             ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                              ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                     ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)       ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                               ; --            ; --          ; --             ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                            ; --            ; --          ; --             ;
 ; PARTITION_COLOR                     ; 16764057                        ; --            ; --          ; Top            ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; --          ; Top            ;
 ; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; --          ; Top            ;
@@ -94,12 +93,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:18     ; 1.0                     ; 4640 MB             ; 00:00:18                           ;
-; Fitter                    ; 00:00:34     ; 1.0                     ; 4881 MB             ; 00:00:34                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 4552 MB             ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:31     ; 1.0                     ; 4665 MB             ; 00:00:20                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4515 MB             ; 00:00:02                           ;
-; Total                     ; 00:01:28     ; --                      ; --                  ; 00:01:17                           ;
+; Analysis & Synthesis      ; 00:00:09     ; 1.0                     ; 4632 MB             ; 00:00:08                           ;
+; Fitter                    ; 00:00:15     ; 1.0                     ; 4861 MB             ; 00:00:15                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 4541 MB             ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:07     ; 1.0                     ; 4611 MB             ; 00:00:06                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4493 MB             ; 00:00:02                           ;
+; Total                     ; 00:00:36     ; --                      ; --                  ; 00:00:34                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

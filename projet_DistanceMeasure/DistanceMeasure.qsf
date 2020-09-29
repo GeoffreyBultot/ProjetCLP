@@ -1,3 +1,4 @@
+
 # -------------------------------------------------------------------------- #
 #
 # Copyright (C) 1991-2013 Altera Corporation
@@ -37,7 +38,7 @@
 
 
 set_global_assignment -name FAMILY "Cyclone IV E"
-set_global_assignment -name DEVICE EP4CE22E22C6
+set_global_assignment -name DEVICE EP4CE22F17C6
 set_global_assignment -name TOP_LEVEL_ENTITY DistanceMeasure
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:55:15  SEPTEMBER 22, 2020"
@@ -46,20 +47,37 @@ set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
-set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
-set_global_assignment -name VHDL_FILE DistanceMeasure.vhd
-set_global_assignment -name VHDL_FILE ADC.vhd
-set_global_assignment -name VHDL_FILE freq_div.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_global_assignment -name SIMULATION_MODE FUNCTIONAL
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/Waveformtest.vwf"
+set_location_assignment PIN_G15 -to digitOUT[0]
+set_location_assignment PIN_F14 -to digitOUT[1]
+set_location_assignment PIN_F15 -to digitOUT[2]
+set_location_assignment PIN_D15 -to digitOUT[3]
+set_location_assignment PIN_C15 -to digitOUT[4]
+set_location_assignment PIN_C14 -to digitOUT[5]
+set_location_assignment PIN_A14 -to digitOUT[6]
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_A10 -to ext_ADC_CS
+set_location_assignment PIN_A9 -to ext_ADC_IN
+set_location_assignment PIN_B14 -to ext_ADC_SCLK
+set_location_assignment PIN_D16 -to SelectionDigit[3]
+set_location_assignment PIN_C16 -to SelectionDigit[2]
+set_location_assignment PIN_B16 -to SelectionDigit[1]
+set_location_assignment PIN_D14 -to SelectionDigit[0]
+set_global_assignment -name SOURCE_FILE DistanceMeasure.qsf
+set_global_assignment -name VHDL_FILE DistanceMeasure.vhd
+set_global_assignment -name VHDL_FILE ADC.vhd
+set_global_assignment -name VHDL_FILE freq_div.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_global_assignment -name VHDL_FILE rawTo4Digit.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveformtest.vwf
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/Waveformtest.vwf"
 set_global_assignment -name VHDL_FILE multiplex7seg4digit.vhd
+set_location_assignment PIN_R8 -to CLOCK_50M
+set_location_assignment PIN_G16 -to digitOUT[7]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

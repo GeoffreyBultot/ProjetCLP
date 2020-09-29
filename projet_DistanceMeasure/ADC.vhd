@@ -72,7 +72,6 @@ ADC_CS_N <= enable;
 					temp := 0;
 				else
 					enable <= '0';
-					
 				end if;
 		end if;
 

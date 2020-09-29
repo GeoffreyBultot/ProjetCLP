@@ -1,10 +1,8 @@
 |DistanceMeasure
-CLOCK_50M => ~NO_FANOUT~
-CLOCK_25M => ADC:ADC0.ADC_SCLK
-CLOCK_25M => multiplex7seg4digit:multiplex0.Clock2500kHZ
-CLOCK_25M => ext_ADC_SCLK.DATAIN
+CLOCK_50M => freq_div:fd1.clock_in
+CLOCK_25M => ~NO_FANOUT~
 ext_ADC_CS <= ADC:ADC0.ADC_CS_N
-ext_ADC_SCLK <= CLOCK_25M.DB_MAX_OUTPUT_PORT_TYPE
+ext_ADC_SCLK <= freq_div:fd1.clock_out
 ext_ADC_IN => ADC:ADC0.ADC_DIN
 SelectionDigit[0] <= multiplex7seg4digit:multiplex0.DigitSelection[0]
 SelectionDigit[1] <= multiplex7seg4digit:multiplex0.DigitSelection[1]
@@ -46,6 +44,16 @@ temp_DigitHundredth[0] <= rawTo4Digit:Converter0.DigitHundredth[0]
 temp_DigitHundredth[1] <= rawTo4Digit:Converter0.DigitHundredth[1]
 temp_DigitHundredth[2] <= rawTo4Digit:Converter0.DigitHundredth[2]
 temp_DigitHundredth[3] <= rawTo4Digit:Converter0.DigitHundredth[3]
+
+
+|DistanceMeasure|freq_div:fd1
+clock_in => clock_temp.CLK
+clock_in => temp[0].CLK
+clock_in => temp[1].CLK
+clock_in => temp[2].CLK
+clock_in => temp[3].CLK
+clock_in => temp[4].CLK
+clock_out <= clock_temp.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |DistanceMeasure|ADC:ADC0
@@ -96,29 +104,29 @@ ADC_DOUT[11] <= ADC_DOUT[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |DistanceMeasure|rawTo4Digit:Converter0
-RAW_VALUE_IN[0] => Div0.IN32
+RAW_VALUE_IN[0] => Mult0.IN20
 RAW_VALUE_IN[0] => Equal0.IN11
-RAW_VALUE_IN[1] => Div0.IN31
+RAW_VALUE_IN[1] => Mult0.IN19
 RAW_VALUE_IN[1] => Equal0.IN10
-RAW_VALUE_IN[2] => Div0.IN30
+RAW_VALUE_IN[2] => Mult0.IN18
 RAW_VALUE_IN[2] => Equal0.IN9
-RAW_VALUE_IN[3] => Div0.IN29
+RAW_VALUE_IN[3] => Mult0.IN17
 RAW_VALUE_IN[3] => Equal0.IN8
-RAW_VALUE_IN[4] => Div0.IN28
+RAW_VALUE_IN[4] => Mult0.IN16
 RAW_VALUE_IN[4] => Equal0.IN7
-RAW_VALUE_IN[5] => Div0.IN27
+RAW_VALUE_IN[5] => Mult0.IN15
 RAW_VALUE_IN[5] => Equal0.IN6
-RAW_VALUE_IN[6] => Div0.IN26
+RAW_VALUE_IN[6] => Mult0.IN14
 RAW_VALUE_IN[6] => Equal0.IN5
-RAW_VALUE_IN[7] => Div0.IN25
+RAW_VALUE_IN[7] => Mult0.IN13
 RAW_VALUE_IN[7] => Equal0.IN4
-RAW_VALUE_IN[8] => Div0.IN24
+RAW_VALUE_IN[8] => Mult0.IN12
 RAW_VALUE_IN[8] => Equal0.IN3
-RAW_VALUE_IN[9] => Div0.IN23
+RAW_VALUE_IN[9] => Mult0.IN11
 RAW_VALUE_IN[9] => Equal0.IN2
-RAW_VALUE_IN[10] => Div0.IN22
+RAW_VALUE_IN[10] => Mult0.IN10
 RAW_VALUE_IN[10] => Equal0.IN1
-RAW_VALUE_IN[11] => Div0.IN21
+RAW_VALUE_IN[11] => Mult0.IN9
 RAW_VALUE_IN[11] => Equal0.IN0
 DigitDecade[0] <= DigitDecade.DB_MAX_OUTPUT_PORT_TYPE
 DigitDecade[1] <= DigitDecade.DB_MAX_OUTPUT_PORT_TYPE
@@ -143,6 +151,15 @@ Clock2500kHZ => clock_RefreshMux.CLK
 Clock2500kHZ => temp[0].CLK
 Clock2500kHZ => temp[1].CLK
 Clock2500kHZ => temp[2].CLK
+Clock2500kHZ => temp[3].CLK
+Clock2500kHZ => temp[4].CLK
+Clock2500kHZ => temp[5].CLK
+Clock2500kHZ => temp[6].CLK
+Clock2500kHZ => temp[7].CLK
+Clock2500kHZ => temp[8].CLK
+Clock2500kHZ => temp[9].CLK
+Clock2500kHZ => temp[10].CLK
+Clock2500kHZ => temp[11].CLK
 DigitDecade[0] => Mux3.IN0
 DigitDecade[1] => Mux2.IN0
 DigitDecade[2] => Mux1.IN0

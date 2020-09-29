@@ -42,7 +42,7 @@ ARCHITECTURE Behavioral OF rawTo4Digit IS
 BEGIN 
 	process(RAW_VALUE_IN)
 		variable realValue : integer := 0;
-
+		--variable floatValue : real := 0.0;
 		begin
 			--floatValue := 10649.6 /real(to_integer(unsigned(RAW_VALUE_IN)));
 			--floatValue := real(to_integer(unsigned(RAW_VALUE_IN))); -- 13 * 4096 / (RAW*VOLTAGE(5))
@@ -52,17 +52,21 @@ BEGIN
 				DigitTenth <= (others => '0');
 				DigitHundredth <= (others => '0');
 			else --if (NOT(( RAW_VALUE_IN = "UUUUUUUUUUUU"))) then
+				
 				realValue := to_integer(unsigned(RAW_VALUE_IN));
+				realValue := (realValue*330)/2048;
+				--realValue := to_integer(floatValue,realValue);
 				
-				realValue := 1064960 / to_integer(unsigned(RAW_VALUE_IN));-- 13 * 4096 * 100 / (RAW*VOLTAGE(5))
 				
-				DigitDecade <= std_logic_vector(to_unsigned(realValue mod 10, DigitDecade'length));
+				--realValue := 1064960 / to_integer(unsigned(RAW_VALUE_IN));-- 13 * 4096 * 100 / (RAW*VOLTAGE(5))
+				
+				DigitHundredth  <= std_logic_vector(to_unsigned(realValue mod 10, DigitHundredth'length));
 				realValue := realValue/10;
-				DigitUnit <= std_logic_vector(to_unsigned((realValue) mod 10, DigitDecade'length));
+				DigitTenth<= std_logic_vector(to_unsigned((realValue) mod 10, DigitTenth'length));
 				realValue := realValue/10;
-				DigitTenth <= std_logic_vector(to_unsigned((realValue) mod 10, DigitDecade'length));
+				DigitUnit  <= std_logic_vector(to_unsigned((realValue) mod 10, DigitUnit'length));
 				realValue := realValue/10;
-				DigitHundredth <= std_logic_vector(to_unsigned((realValue) mod 10, DigitDecade'length));
+				DigitDecade<= std_logic_vector(to_unsigned((realValue) mod 10, DigitDecade'length));
 				--end if;
 			end if;
 			

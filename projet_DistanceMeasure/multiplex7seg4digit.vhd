@@ -56,19 +56,19 @@ DigitSelection <= sig_DigitSelection;
 					case (currentDigitSelection) is
 						when 0 => 
 							currentDigit <= DigitDecade;
-							sig_DigitSelection <= "0001";
+							sig_DigitSelection <= "1110";
 							currentDigitSelection := 1;
 						when 1 => 
 							currentDigit <= DigitUnit;
-							sig_DigitSelection <= "0010";
+							sig_DigitSelection <= "1101";
 							currentDigitSelection := 2;
 						when 2 => 
 							currentDigit <= DigitTenth;
-							sig_DigitSelection <= "0100";
+							sig_DigitSelection <= "1011";
 							currentDigitSelection := 3;
 						when 3 => 
 							currentDigit <= DigitHundredth;
-							sig_DigitSelection <= "1000";
+							sig_DigitSelection <= "0111";
 							currentDigitSelection := 0;
 						when others =>
 							currentDigit <= "0000";
@@ -77,23 +77,23 @@ DigitSelection <= sig_DigitSelection;
 					end case;
 					
 					case currentDigit is --A B C D E F G DP
-						when "0000" => DigitOUT <= "00000010"; -- "0"     
-						when "0001" => DigitOUT <= "10011110"; -- "1" 
-						when "0010" => DigitOUT <= "00100100"; -- "2" 
-						when "0011" => DigitOUT <= "00001100"; -- "3" 
-						when "0100" => DigitOUT <= "10011000"; -- "4" 
-						when "0101" => DigitOUT <= "01001000"; -- "5" 
-						when "0110" => DigitOUT <= "01000000"; -- "6" 
-						when "0111" => DigitOUT <= "00011110"; -- "7" 
-						when "1000" => DigitOUT <= "00000000"; -- "8"     
-						when "1001" => DigitOUT <= "00001000"; -- "9" 
-						when "1010" => DigitOUT <= "00000100"; -- a
-						when "1011" => DigitOUT <= "11000000"; -- b
-						when "1100" => DigitOUT <= "01100010"; -- C
-						when "1101" => DigitOUT <= "10000100"; -- d
-						when "1110" => DigitOUT <= "01100000"; -- E
-						when "1111" => DigitOUT <= "01110000"; -- F
-						when others => DigitOUT <= "11111111"; -- nothing
+						when "0000" => DigitOUT <= "10111111"; -- "0"     
+						when "0001" => DigitOUT <= "10000110"; -- "1" 
+						when "0010" => DigitOUT <= "11011011"; -- "2" 
+						when "0011" => DigitOUT <= "11001111"; -- "3" 
+						when "0100" => DigitOUT <= "11100110"; -- "4" 
+						when "0101" => DigitOUT <= "11101101"; -- "5" 
+						when "0110" => DigitOUT <= "11111101"; -- "6" 
+						when "0111" => DigitOUT <= "10000111"; -- "7" 
+						when "1000" => DigitOUT <= "11111111"; -- "8"     
+						when "1001" => DigitOUT <= "11101111"; -- "9" 
+						--when "1010" => DigitOUT <= "0"; -- a
+						--when "1011" => DigitOUT <= "11000000"; -- b
+						--when "1100" => DigitOUT <= "01100010"; -- C
+						--when "1101" => DigitOUT <= "10000100"; -- d
+						--when "1110" => DigitOUT <= "01100000"; -- E
+						--when "1111" => DigitOUT <= "01110000"; -- F
+						when others => DigitOUT <= "00000000"; -- nothing
 					end case;
 					
 					
@@ -101,12 +101,12 @@ DigitSelection <= sig_DigitSelection;
 			end process;
 	
 		process(Clock2500kHZ)
-			variable temp : integer range 0 to 5;
+			variable temp : integer range 0 to 4000;
 			begin
 				--The input frequency is divided by 20
 				if rising_edge(Clock2500kHZ) then
 					temp := temp + 1;
-					if (temp=5) then
+					if (temp=400) then
 						clock_RefreshMux <= not(clock_RefreshMux);
 						temp := 0;
 					end if;
