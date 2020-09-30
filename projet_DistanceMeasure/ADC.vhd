@@ -26,9 +26,10 @@ ENTITY ADC IS
 	PORT
 	(
 		ADC_CS_N : out std_logic;
-		ADC_SCLK : in std_logic;--ADC clock
+		CLOCK_50MHZ: in std_logic;--ADC clock
+		ADC_SCLK : out std_logic;--ADC clock
 		ADC_DIN : in std_logic;
-		ADC_DOUT : out std_logic_vector (11 downto 0) := "000000000000"
+		ADC_DOUT : out std_logic_vector (11 downto 0) --:= "000000000000"
 		--ADC_SADDR : out std_logic;--channel address (For this project we use channel 1)
 		--ADC_CS_N : out std_logic--this signal activate the ADC chip (ADC_CS_N)
 	);
@@ -36,26 +37,42 @@ END ADC;
 
 ARCHITECTURE Behavioral OF ADC IS 
 
-signal dato_temp : std_logic_vector (15 downto 0);
+signal temp_ADC_Out : std_logic_vector (15 downto 0);
 signal enable : std_logic;
+signal sig_ADC_SCLK : std_logic;
+
 BEGIN 
 ADC_CS_N <= enable;
+ADC_SCLK <= sig_ADC_SCLK;
 
-	process(ADC_SCLK)
+	process(CLOCK_50MHZ)
+			variable temp : integer range 0 to 20;
+		begin
+			--The input frequency is divided by 20
+			if rising_edge(CLOCK_50MHZ) then
+				temp := temp + 1;
+				if (temp=20) then
+					sig_ADC_SCLK <= not(sig_ADC_SCLK);
+					temp:=0;
+				end if;
+			end if;
+		end process;
+		
+	process(sig_ADC_SCLK)
 	begin
-		if rising_edge(ADC_SCLK) then
+		if rising_edge(sig_ADC_SCLK) then
 
 			--This is the actual shift register
-				dato_temp(0) <= ADC_DIN;
+				temp_ADC_Out(0) <= ADC_DIN;
 				for i in 1 to 15 loop
-					dato_temp(i) <= dato_temp(i-1);
+					temp_ADC_Out(i) <= temp_ADC_Out(i-1);
 				end loop;
 		end if;
 	end process;
 --fDiv1: freq_div port map (clock_in=>CLOCK_50MHZ,clock_out=>ADC_SCLK);
 
 
-	process(ADC_SCLK)
+	process(sig_ADC_SCLK)
 
 		variable temp : integer range 0 to 16;
 		--variable cont_temp : integer range 0 to 3;
@@ -63,7 +80,7 @@ ADC_CS_N <= enable;
 		begin
 
 		--This process activate the "enable" signal every 16 clock periods
-		if rising_edge(ADC_SCLK) then
+		if rising_edge(sig_ADC_SCLK) then
 			
 
 				temp := temp + 1;
@@ -79,11 +96,11 @@ ADC_CS_N <= enable;
 
 
 	--When the signal "enable" is high the 12 bit reading is stored in the output signal "dato_out"
-	process(ADC_SCLK)
+	process(sig_ADC_SCLK)
 		begin
-			if rising_edge(ADC_SCLK) then
+			if rising_edge(sig_ADC_SCLK) then
 					if (enable = '1') then
-						ADC_DOUT <= dato_temp(11 downto 0);
+						ADC_DOUT <= temp_ADC_Out(11 downto 0);
 					end if;
 			end if;
 

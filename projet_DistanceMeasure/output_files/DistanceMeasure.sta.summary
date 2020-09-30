@@ -2,112 +2,148 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'multiplex7seg4digit:multiplex0|clock_RefreshMux'
-Slack : -19.733
-TNS   : -83.820
-
-Type  : Slow 1200mV 85C Model Setup 'freq_div:fd1|clock_temp'
-Slack : -2.733
-TNS   : -28.258
+Type  : Slow 1200mV 85C Model Setup 'rawTo4Digit:Converter0|sig_refreshDigits'
+Slack : -54.778
+TNS   : -846.088
 
 Type  : Slow 1200mV 85C Model Setup 'CLOCK_50M'
-Slack : -0.651
-TNS   : -1.594
+Slack : -4.688
+TNS   : -113.488
 
-Type  : Slow 1200mV 85C Model Hold 'freq_div:fd1|clock_temp'
-Slack : -0.299
-TNS   : -0.299
+Type  : Slow 1200mV 85C Model Setup 'multiplex7seg4digit:multiplex0|clock_RefreshMux'
+Slack : -2.684
+TNS   : -12.962
+
+Type  : Slow 1200mV 85C Model Setup 'ADC:ADC0|sig_ADC_SCLK'
+Slack : -0.628
+TNS   : -8.904
 
 Type  : Slow 1200mV 85C Model Hold 'CLOCK_50M'
-Slack : -0.065
-TNS   : -0.065
+Slack : -0.170
+TNS   : -0.213
+
+Type  : Slow 1200mV 85C Model Hold 'ADC:ADC0|sig_ADC_SCLK'
+Slack : 0.357
+TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'multiplex7seg4digit:multiplex0|clock_RefreshMux'
 Slack : 0.357
 TNS   : 0.000
 
+Type  : Slow 1200mV 85C Model Hold 'rawTo4Digit:Converter0|sig_refreshDigits'
+Slack : 1.238
+TNS   : 0.000
+
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50M'
 Slack : -3.000
-TNS   : -9.000
+TNS   : -54.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'freq_div:fd1|clock_temp'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ADC:ADC0|sig_ADC_SCLK'
 Slack : -1.000
-TNS   : -41.000
+TNS   : -30.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'multiplex7seg4digit:multiplex0|clock_RefreshMux'
 Slack : -1.000
 TNS   : -18.000
 
-Type  : Slow 1200mV 0C Model Setup 'multiplex7seg4digit:multiplex0|clock_RefreshMux'
-Slack : -17.445
-TNS   : -72.679
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'rawTo4Digit:Converter0|sig_refreshDigits'
+Slack : -1.000
+TNS   : -16.000
 
-Type  : Slow 1200mV 0C Model Setup 'freq_div:fd1|clock_temp'
-Slack : -2.327
-TNS   : -22.019
+Type  : Slow 1200mV 0C Model Setup 'rawTo4Digit:Converter0|sig_refreshDigits'
+Slack : -48.956
+TNS   : -754.832
 
 Type  : Slow 1200mV 0C Model Setup 'CLOCK_50M'
-Slack : -0.478
-TNS   : -0.941
+Slack : -4.065
+TNS   : -95.296
 
-Type  : Slow 1200mV 0C Model Hold 'freq_div:fd1|clock_temp'
-Slack : -0.218
-TNS   : -0.218
+Type  : Slow 1200mV 0C Model Setup 'multiplex7seg4digit:multiplex0|clock_RefreshMux'
+Slack : -2.326
+TNS   : -10.021
+
+Type  : Slow 1200mV 0C Model Setup 'ADC:ADC0|sig_ADC_SCLK'
+Slack : -0.454
+TNS   : -5.616
 
 Type  : Slow 1200mV 0C Model Hold 'CLOCK_50M'
-Slack : -0.029
-TNS   : -0.029
+Slack : -0.170
+TNS   : -0.208
+
+Type  : Slow 1200mV 0C Model Hold 'ADC:ADC0|sig_ADC_SCLK'
+Slack : 0.312
+TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'multiplex7seg4digit:multiplex0|clock_RefreshMux'
 Slack : 0.312
 TNS   : 0.000
 
+Type  : Slow 1200mV 0C Model Hold 'rawTo4Digit:Converter0|sig_refreshDigits'
+Slack : 1.211
+TNS   : 0.000
+
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50M'
 Slack : -3.000
-TNS   : -9.000
+TNS   : -54.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'freq_div:fd1|clock_temp'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ADC:ADC0|sig_ADC_SCLK'
 Slack : -1.000
-TNS   : -41.000
+TNS   : -30.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'multiplex7seg4digit:multiplex0|clock_RefreshMux'
 Slack : -1.000
 TNS   : -18.000
 
-Type  : Fast 1200mV 0C Model Setup 'multiplex7seg4digit:multiplex0|clock_RefreshMux'
-Slack : -10.605
-TNS   : -41.866
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'rawTo4Digit:Converter0|sig_refreshDigits'
+Slack : -1.000
+TNS   : -16.000
 
-Type  : Fast 1200mV 0C Model Setup 'freq_div:fd1|clock_temp'
-Slack : -1.051
-TNS   : -4.596
+Type  : Fast 1200mV 0C Model Setup 'rawTo4Digit:Converter0|sig_refreshDigits'
+Slack : -30.863
+TNS   : -475.300
 
 Type  : Fast 1200mV 0C Model Setup 'CLOCK_50M'
-Slack : 0.075
+Slack : -2.193
+TNS   : -43.110
+
+Type  : Fast 1200mV 0C Model Setup 'multiplex7seg4digit:multiplex0|clock_RefreshMux'
+Slack : -1.432
+TNS   : -5.172
+
+Type  : Fast 1200mV 0C Model Setup 'ADC:ADC0|sig_ADC_SCLK'
+Slack : 0.067
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'freq_div:fd1|clock_temp'
-Slack : -0.283
-TNS   : -0.283
-
 Type  : Fast 1200mV 0C Model Hold 'CLOCK_50M'
-Slack : -0.068
-TNS   : -0.068
+Slack : -0.184
+TNS   : -0.285
+
+Type  : Fast 1200mV 0C Model Hold 'ADC:ADC0|sig_ADC_SCLK'
+Slack : 0.186
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'multiplex7seg4digit:multiplex0|clock_RefreshMux'
-Slack : 0.187
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'rawTo4Digit:Converter0|sig_refreshDigits'
+Slack : 0.820
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50M'
 Slack : -3.000
-TNS   : -9.324
+TNS   : -56.841
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'freq_div:fd1|clock_temp'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ADC:ADC0|sig_ADC_SCLK'
 Slack : -1.000
-TNS   : -41.000
+TNS   : -30.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'multiplex7seg4digit:multiplex0|clock_RefreshMux'
 Slack : -1.000
 TNS   : -18.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'rawTo4Digit:Converter0|sig_refreshDigits'
+Slack : -1.000
+TNS   : -16.000
 
 ------------------------------------------------------------

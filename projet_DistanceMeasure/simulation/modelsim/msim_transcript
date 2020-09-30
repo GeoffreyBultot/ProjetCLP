@@ -1,69 +1,53 @@
 # Reading D:/Programmes/altera/13.0/modelsim_ase/tcl/vsim/pref.tcl 
-# do DistanceMeasure_run_msim_gate_verilog.do 
-# if {[file exists gate_work]} {
-# 	vdel -lib gate_work -all
+# do DistanceMeasure_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
 # }
-# vlib gate_work
-# vmap work gate_work
+# vlib rtl_work
+# vmap work rtl_work
 # Copying D:\Programmes\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # ** Warning: Copied D:\Programmes\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vlog -vlog01compat -work work +incdir+. {DistanceMeasure.vo}
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module DistanceMeasure
+# vcom -93 -work work {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/DistanceMeasure.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity DistanceMeasure
+# -- Compiling architecture Behavioral of DistanceMeasure
+# vcom -93 -work work {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/ADC.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ADC
+# -- Compiling architecture Behavioral of ADC
+# vcom -93 -work work {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/rawTo4Digit.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling entity rawTo4Digit
+# -- Compiling architecture Behavioral of rawTo4Digit
+# vcom -93 -work work {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/multiplex7seg4digit.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity multiplex7seg4digit
+# -- Compiling architecture behav of multiplex7seg4digit
 # 
-# Top level modules:
-# 	DistanceMeasure
-# 
-vsim rtl_work.distancemeasure
-# vsim rtl_work.distancemeasure 
+vsim work.adc
+# vsim work.adc 
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
-# Loading rtl_work.distancemeasure(behavioral)
-# Loading rtl_work.adc(behavioral)
-# Loading ieee.math_real(body)
-# Loading rtl_work.rawto4digit(behavioral)
-# Loading rtl_work.multiplex7seg4digit(behav)
-vsim rtl_work.adc
-# vsim rtl_work.adc 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading rtl_work.adc(behavioral)
-vsim rtl_work.adc
-# vsim rtl_work.adc 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading rtl_work.adc(behavioral)
-wave create -driver freeze -pattern clock -initialvalue U -period 10ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/adc/ADC_SCLK
-# distancemeasure
-wave create -driver freeze -pattern clock -initialvalue U -period 20ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/adc/ADC_DIN
-# distancemeasure
-wave create -driver expectedOutput -pattern constant -value 0 -starttime 0ps -endtime 1000ps sim:/adc/ADC_CS_N
-# distancemeasure
-add wave -position insertpoint  \
-sim:/adc/ADC_DOUT \
-sim:/adc/dato_temp
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-# 
-#           File in use by: geoff  Hostname: DESKTOP-G6OJVDD  ProcessID: 19388
-# 
-#           Attempting to use alternate WLF file "./wlftetbm4d".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-# 
-#           Using alternate file: ./wlftetbm4d
-# 
-run
-run
-run
-run
-run
-run
-run
+# Loading work.adc(behavioral)

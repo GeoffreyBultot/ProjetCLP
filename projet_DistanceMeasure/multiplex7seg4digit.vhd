@@ -25,7 +25,7 @@ LIBRARY work;
 ENTITY multiplex7seg4digit IS 
 	PORT
 	(
-		Clock2500kHZ : in std_logic;
+		CLOCK_50MHZ : in std_logic;
 		DigitDecade : in std_logic_vector (3 downto 0);
 		DigitUnit : in std_logic_vector (3 downto 0);
 		DigitTenth : in std_logic_vector (3 downto 0);
@@ -100,13 +100,13 @@ DigitSelection <= sig_DigitSelection;
 					end if;
 			end process;
 	
-		process(Clock2500kHZ)
-			variable temp : integer range 0 to 4000;
+		process(CLOCK_50MHZ)
+			variable temp : integer range 0 to 8000;
 			begin
 				--The input frequency is divided by 20
-				if rising_edge(Clock2500kHZ) then
+				if rising_edge(CLOCK_50MHZ) then
 					temp := temp + 1;
-					if (temp=400) then
+					if (temp=8000) then
 						clock_RefreshMux <= not(clock_RefreshMux);
 						temp := 0;
 					end if;

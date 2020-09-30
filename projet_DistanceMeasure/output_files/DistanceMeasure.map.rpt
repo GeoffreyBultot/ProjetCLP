@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DistanceMeasure
-Tue Sep 29 09:20:16 2020
+Tue Sep 29 21:34:50 2020
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -15,16 +15,18 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
   9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_mult:Mult0
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
  12. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Div0
  13. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Div1
- 14. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Mod2
- 15. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Mod1
- 16. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Mod0
- 17. lpm_mult Parameter Settings by Entity Instance
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
+ 14. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Div2
+ 15. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Div3
+ 16. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Mod3
+ 17. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Mod2
+ 18. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Mod1
+ 19. Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Mod0
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -50,15 +52,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Sep 29 09:20:16 2020      ;
+; Analysis & Synthesis Status        ; Successful - Tue Sep 29 21:34:50 2020      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; DistanceMeasure                            ;
 ; Top-level Entity Name              ; DistanceMeasure                            ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 503                                        ;
-;     Total combinational functions  ; 479                                        ;
-;     Dedicated logic registers      ; 65                                         ;
-; Total registers                    ; 65                                         ;
+; Total logic elements               ; 3,012                                      ;
+;     Total combinational functions  ; 2,988                                      ;
+;     Dedicated logic registers      ; 115                                        ;
+; Total registers                    ; 115                                        ;
 ; Total pins                         ; 45                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
@@ -172,115 +174,98 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; DistanceMeasure.vhd              ; yes             ; User VHDL File               ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/DistanceMeasure.vhd        ;         ;
 ; ADC.vhd                          ; yes             ; User VHDL File               ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/ADC.vhd                    ;         ;
-; freq_div.vhd                     ; yes             ; User VHDL File               ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/freq_div.vhd               ;         ;
 ; rawTo4Digit.vhd                  ; yes             ; User VHDL File               ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/rawTo4Digit.vhd            ;         ;
 ; multiplex7seg4digit.vhd          ; yes             ; User VHDL File               ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/multiplex7seg4digit.vhd    ;         ;
-; lpm_mult.tdf                     ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/lpm_mult.tdf                                                                                                                        ;         ;
-; aglobal130.inc                   ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc                                                                                                                      ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/lpm_add_sub.inc                                                                                                                     ;         ;
-; multcore.inc                     ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/multcore.inc                                                                                                                        ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/bypassff.inc                                                                                                                        ;         ;
-; altshift.inc                     ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/altshift.inc                                                                                                                        ;         ;
-; multcore.tdf                     ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/multcore.tdf                                                                                                                        ;         ;
-; csa_add.inc                      ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/csa_add.inc                                                                                                                         ;         ;
-; mpar_add.inc                     ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/mpar_add.inc                                                                                                                        ;         ;
-; muleabz.inc                      ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/muleabz.inc                                                                                                                         ;         ;
-; mul_lfrg.inc                     ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/mul_lfrg.inc                                                                                                                        ;         ;
-; mul_boothc.inc                   ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/mul_boothc.inc                                                                                                                      ;         ;
-; alt_ded_mult.inc                 ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/alt_ded_mult.inc                                                                                                                    ;         ;
-; alt_ded_mult_y.inc               ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/alt_ded_mult_y.inc                                                                                                                  ;         ;
-; dffpipe.inc                      ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/dffpipe.inc                                                                                                                         ;         ;
-; mpar_add.tdf                     ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/mpar_add.tdf                                                                                                                        ;         ;
-; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/lpm_add_sub.tdf                                                                                                                     ;         ;
-; addcore.inc                      ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/addcore.inc                                                                                                                         ;         ;
-; look_add.inc                     ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/look_add.inc                                                                                                                        ;         ;
-; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                                                                                                             ;         ;
-; db/add_sub_mgh.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/db/add_sub_mgh.tdf         ;         ;
-; db/add_sub_qgh.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/db/add_sub_qgh.tdf         ;         ;
-; altshift.tdf                     ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/altshift.tdf                                                                                                                        ;         ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/lpm_divide.tdf                                                                                                                      ;         ;
 ; abs_divider.inc                  ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/abs_divider.inc                                                                                                                     ;         ;
 ; sign_div_unsign.inc              ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/sign_div_unsign.inc                                                                                                                 ;         ;
-; db/lpm_divide_sim.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/db/lpm_divide_sim.tdf      ;         ;
-; db/sign_div_unsign_klh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/db/sign_div_unsign_klh.tdf ;         ;
-; db/alt_u_div_s6f.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/db/alt_u_div_s6f.tdf       ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; d:/programmes/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc                                                                                                                      ;         ;
+; db/lpm_divide_ckm.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/db/lpm_divide_ckm.tdf      ;         ;
+; db/sign_div_unsign_4nh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/db/sign_div_unsign_4nh.tdf ;         ;
+; db/alt_u_div_s9f.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/db/alt_u_div_s9f.tdf       ;         ;
 ; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/db/add_sub_7pc.tdf         ;         ;
 ; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/db/add_sub_8pc.tdf         ;         ;
-; db/lpm_divide_ccm.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/db/lpm_divide_ccm.tdf      ;         ;
-; db/sign_div_unsign_1nh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/db/sign_div_unsign_1nh.tdf ;         ;
-; db/alt_u_div_m9f.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/db/alt_u_div_m9f.tdf       ;         ;
+; db/lpm_divide_tim.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/db/lpm_divide_tim.tdf      ;         ;
+; db/sign_div_unsign_llh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/db/sign_div_unsign_llh.tdf ;         ;
+; db/alt_u_div_u6f.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/db/alt_u_div_u6f.tdf       ;         ;
+; db/lpm_divide_ecm.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/db/lpm_divide_ecm.tdf      ;         ;
+; db/sign_div_unsign_9nh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/db/sign_div_unsign_9nh.tdf ;         ;
+; db/alt_u_div_r9f.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/db/alt_u_div_r9f.tdf       ;         ;
 +----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                           ;
-+---------------------------------------------+-------------------------+
-; Resource                                    ; Usage                   ;
-+---------------------------------------------+-------------------------+
-; Estimated Total logic elements              ; 503                     ;
-;                                             ;                         ;
-; Total combinational functions               ; 479                     ;
-; Logic element usage by number of LUT inputs ;                         ;
-;     -- 4 input functions                    ; 117                     ;
-;     -- 3 input functions                    ; 131                     ;
-;     -- <=2 input functions                  ; 231                     ;
-;                                             ;                         ;
-; Logic elements by mode                      ;                         ;
-;     -- normal mode                          ; 322                     ;
-;     -- arithmetic mode                      ; 157                     ;
-;                                             ;                         ;
-; Total registers                             ; 65                      ;
-;     -- Dedicated logic registers            ; 65                      ;
-;     -- I/O registers                        ; 0                       ;
-;                                             ;                         ;
-; I/O pins                                    ; 45                      ;
-; Embedded Multiplier 9-bit elements          ; 0                       ;
-; Maximum fan-out node                        ; freq_div:fd1|clock_temp ;
-; Maximum fan-out                             ; 43                      ;
-; Total fan-out                               ; 1493                    ;
-; Average fan-out                             ; 2.35                    ;
-+---------------------------------------------+-------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                                                                                       ;
++---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                                                                                               ;
++---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 3,012                                                                                                                                               ;
+;                                             ;                                                                                                                                                     ;
+; Total combinational functions               ; 2988                                                                                                                                                ;
+; Logic element usage by number of LUT inputs ;                                                                                                                                                     ;
+;     -- 4 input functions                    ; 743                                                                                                                                                 ;
+;     -- 3 input functions                    ; 1058                                                                                                                                                ;
+;     -- <=2 input functions                  ; 1187                                                                                                                                                ;
+;                                             ;                                                                                                                                                     ;
+; Logic elements by mode                      ;                                                                                                                                                     ;
+;     -- normal mode                          ; 1967                                                                                                                                                ;
+;     -- arithmetic mode                      ; 1021                                                                                                                                                ;
+;                                             ;                                                                                                                                                     ;
+; Total registers                             ; 115                                                                                                                                                 ;
+;     -- Dedicated logic registers            ; 115                                                                                                                                                 ;
+;     -- I/O registers                        ; 0                                                                                                                                                   ;
+;                                             ;                                                                                                                                                     ;
+; I/O pins                                    ; 45                                                                                                                                                  ;
+; Embedded Multiplier 9-bit elements          ; 0                                                                                                                                                   ;
+; Maximum fan-out node                        ; rawTo4Digit:Converter0|lpm_divide:Mod3|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider|add_sub_17_result_int[18]~34 ;
+; Maximum fan-out                             ; 54                                                                                                                                                  ;
+; Total fan-out                               ; 8548                                                                                                                                                ;
+; Average fan-out                             ; 2.68                                                                                                                                                ;
++---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                           ;
-+---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                            ; Library Name ;
-+---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |DistanceMeasure                                  ; 479 (0)           ; 65 (0)       ; 0           ; 0            ; 0       ; 0         ; 45   ; 0            ; |DistanceMeasure                                                                                                                                               ;              ;
-;    |ADC:ADC0|                                     ; 8 (8)             ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|ADC:ADC0                                                                                                                                      ;              ;
-;    |freq_div:fd1|                                 ; 8 (8)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|freq_div:fd1                                                                                                                                  ;              ;
-;    |multiplex7seg4digit:multiplex0|               ; 41 (41)           ; 29 (29)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|multiplex7seg4digit:multiplex0                                                                                                                ;              ;
-;    |rawTo4Digit:Converter0|                       ; 422 (16)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0                                                                                                                        ;              ;
-;       |lpm_divide:Div0|                           ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div0                                                                                                        ;              ;
-;          |lpm_divide_sim:auto_generated|          ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div0|lpm_divide_sim:auto_generated                                                                          ;              ;
-;             |sign_div_unsign_klh:divider|         ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div0|lpm_divide_sim:auto_generated|sign_div_unsign_klh:divider                                              ;              ;
-;                |alt_u_div_s6f:divider|            ; 82 (82)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div0|lpm_divide_sim:auto_generated|sign_div_unsign_klh:divider|alt_u_div_s6f:divider                        ;              ;
-;       |lpm_divide:Div1|                           ; 47 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div1                                                                                                        ;              ;
-;          |lpm_divide_sim:auto_generated|          ; 47 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_sim:auto_generated                                                                          ;              ;
-;             |sign_div_unsign_klh:divider|         ; 47 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_sim:auto_generated|sign_div_unsign_klh:divider                                              ;              ;
-;                |alt_u_div_s6f:divider|            ; 47 (47)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_sim:auto_generated|sign_div_unsign_klh:divider|alt_u_div_s6f:divider                        ;              ;
-;       |lpm_divide:Mod0|                           ; 130 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod0                                                                                                        ;              ;
-;          |lpm_divide_ccm:auto_generated|          ; 130 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_ccm:auto_generated                                                                          ;              ;
-;             |sign_div_unsign_1nh:divider|         ; 130 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider                                              ;              ;
-;                |alt_u_div_m9f:divider|            ; 130 (130)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_m9f:divider                        ;              ;
-;       |lpm_divide:Mod1|                           ; 83 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod1                                                                                                        ;              ;
-;          |lpm_divide_ccm:auto_generated|          ; 83 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_ccm:auto_generated                                                                          ;              ;
-;             |sign_div_unsign_1nh:divider|         ; 83 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider                                              ;              ;
-;                |alt_u_div_m9f:divider|            ; 83 (83)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_m9f:divider                        ;              ;
-;       |lpm_divide:Mod2|                           ; 15 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod2                                                                                                        ;              ;
-;          |lpm_divide_ccm:auto_generated|          ; 15 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod2|lpm_divide_ccm:auto_generated                                                                          ;              ;
-;             |sign_div_unsign_1nh:divider|         ; 15 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod2|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider                                              ;              ;
-;                |alt_u_div_m9f:divider|            ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod2|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_m9f:divider                        ;              ;
-;       |lpm_mult:Mult0|                            ; 49 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_mult:Mult0                                                                                                         ;              ;
-;          |multcore:mult_core|                     ; 49 (25)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_mult:Mult0|multcore:mult_core                                                                                      ;              ;
-;             |mpar_add:padder|                     ; 24 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                                      ;              ;
-;                |lpm_add_sub:adder[0]|             ; 12 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                 ;              ;
-;                   |add_sub_mgh:auto_generated|    ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_mgh:auto_generated                      ;              ;
-;                |mpar_add:sub_par_add|             ; 12 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add                                                 ;              ;
-;                   |lpm_add_sub:adder[0]|          ; 12 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                            ;              ;
-;                      |add_sub_qgh:auto_generated| ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_qgh:auto_generated ;              ;
-+---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                            ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                     ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |DistanceMeasure                          ; 2988 (0)          ; 115 (0)      ; 0           ; 0            ; 0       ; 0         ; 45   ; 0            ; |DistanceMeasure                                                                                                                        ;              ;
+;    |ADC:ADC0|                             ; 17 (17)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|ADC:ADC0                                                                                                               ;              ;
+;    |multiplex7seg4digit:multiplex0|       ; 47 (47)           ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|multiplex7seg4digit:multiplex0                                                                                         ;              ;
+;    |rawTo4Digit:Converter0|               ; 2924 (96)         ; 49 (49)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0                                                                                                 ;              ;
+;       |lpm_divide:Div0|                   ; 360 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div0                                                                                 ;              ;
+;          |lpm_divide_ckm:auto_generated|  ; 360 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div0|lpm_divide_ckm:auto_generated                                                   ;              ;
+;             |sign_div_unsign_4nh:divider| ; 360 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div0|lpm_divide_ckm:auto_generated|sign_div_unsign_4nh:divider                       ;              ;
+;                |alt_u_div_s9f:divider|    ; 360 (360)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div0|lpm_divide_ckm:auto_generated|sign_div_unsign_4nh:divider|alt_u_div_s9f:divider ;              ;
+;       |lpm_divide:Div1|                   ; 223 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div1                                                                                 ;              ;
+;          |lpm_divide_tim:auto_generated|  ; 223 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_tim:auto_generated                                                   ;              ;
+;             |sign_div_unsign_llh:divider| ; 223 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider                       ;              ;
+;                |alt_u_div_u6f:divider|    ; 223 (223)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider ;              ;
+;       |lpm_divide:Div2|                   ; 187 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div2                                                                                 ;              ;
+;          |lpm_divide_tim:auto_generated|  ; 187 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div2|lpm_divide_tim:auto_generated                                                   ;              ;
+;             |sign_div_unsign_llh:divider| ; 187 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div2|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider                       ;              ;
+;                |alt_u_div_u6f:divider|    ; 187 (187)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div2|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider ;              ;
+;       |lpm_divide:Div3|                   ; 145 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div3                                                                                 ;              ;
+;          |lpm_divide_tim:auto_generated|  ; 145 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div3|lpm_divide_tim:auto_generated                                                   ;              ;
+;             |sign_div_unsign_llh:divider| ; 145 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div3|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider                       ;              ;
+;                |alt_u_div_u6f:divider|    ; 145 (145)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div3|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider ;              ;
+;       |lpm_divide:Mod0|                   ; 573 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod0                                                                                 ;              ;
+;          |lpm_divide_ecm:auto_generated|  ; 573 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_ecm:auto_generated                                                   ;              ;
+;             |sign_div_unsign_9nh:divider| ; 573 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider                       ;              ;
+;                |alt_u_div_r9f:divider|    ; 573 (573)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider ;              ;
+;       |lpm_divide:Mod1|                   ; 525 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod1                                                                                 ;              ;
+;          |lpm_divide_ecm:auto_generated|  ; 525 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_ecm:auto_generated                                                   ;              ;
+;             |sign_div_unsign_9nh:divider| ; 525 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider                       ;              ;
+;                |alt_u_div_r9f:divider|    ; 525 (525)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider ;              ;
+;       |lpm_divide:Mod2|                   ; 460 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod2                                                                                 ;              ;
+;          |lpm_divide_ecm:auto_generated|  ; 460 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod2|lpm_divide_ecm:auto_generated                                                   ;              ;
+;             |sign_div_unsign_9nh:divider| ; 460 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod2|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider                       ;              ;
+;                |alt_u_div_r9f:divider|    ; 460 (460)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod2|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider ;              ;
+;       |lpm_divide:Mod3|                   ; 355 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod3                                                                                 ;              ;
+;          |lpm_divide_ecm:auto_generated|  ; 355 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod3|lpm_divide_ecm:auto_generated                                                   ;              ;
+;             |sign_div_unsign_9nh:divider| ; 355 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod3|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider                       ;              ;
+;                |alt_u_div_r9f:divider|    ; 355 (355)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod3|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider ;              ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -300,9 +285,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 65    ;
-; Number of registers using Synchronous Clear  ; 4     ;
-; Number of registers using Synchronous Load   ; 4     ;
+; Total registers                              ; 115   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 12    ;
@@ -310,48 +295,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; rawTo4Digit:Converter0|temp[0]         ; 1       ;
+; rawTo4Digit:Converter0|temp[31]        ; 1       ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
+
+
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |DistanceMeasure|multiplex7seg4digit:multiplex0|currentDigit[3] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |DistanceMeasure|multiplex7seg4digit:multiplex0|currentDigit[2] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_mult:Mult0 ;
-+------------------------------------------------+--------------+------------------------+
-; Parameter Name                                 ; Value        ; Type                   ;
-+------------------------------------------------+--------------+------------------------+
-; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE         ;
-; LPM_WIDTHA                                     ; 12           ; Untyped                ;
-; LPM_WIDTHB                                     ; 9            ; Untyped                ;
-; LPM_WIDTHP                                     ; 21           ; Untyped                ;
-; LPM_WIDTHR                                     ; 21           ; Untyped                ;
-; LPM_WIDTHS                                     ; 1            ; Untyped                ;
-; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                ;
-; LPM_PIPELINE                                   ; 0            ; Untyped                ;
-; LATENCY                                        ; 0            ; Untyped                ;
-; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                ;
-; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped                ;
-; USE_EAB                                        ; OFF          ; Untyped                ;
-; MAXIMIZE_SPEED                                 ; 5            ; Untyped                ;
-; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                ;
-; CARRY_CHAIN                                    ; MANUAL       ; Untyped                ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K    ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                ;
-; CBXI_PARAMETER                                 ; NOTHING      ; Untyped                ;
-; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                ;
-; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                ;
-+------------------------------------------------+--------------+------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------------+
@@ -359,14 +320,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------+----------------+-----------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                          ;
 +------------------------+----------------+-----------------------------------------------+
-; LPM_WIDTHN             ; 10             ; Untyped                                       ;
-; LPM_WIDTHD             ; 4              ; Untyped                                       ;
+; LPM_WIDTHN             ; 20             ; Untyped                                       ;
+; LPM_WIDTHD             ; 12             ; Untyped                                       ;
 ; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
 ; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
 ; LPM_PIPELINE           ; 0              ; Untyped                                       ;
 ; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
 ; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
-; CBXI_PARAMETER         ; lpm_divide_sim ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_ckm ; Untyped                                       ;
 ; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
 ; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
 ; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
@@ -382,14 +343,83 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------+----------------+-----------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                          ;
 +------------------------+----------------+-----------------------------------------------+
-; LPM_WIDTHN             ; 10             ; Untyped                                       ;
+; LPM_WIDTHN             ; 20             ; Untyped                                       ;
 ; LPM_WIDTHD             ; 4              ; Untyped                                       ;
 ; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
 ; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
 ; LPM_PIPELINE           ; 0              ; Untyped                                       ;
 ; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
 ; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
-; CBXI_PARAMETER         ; lpm_divide_sim ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_tim ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Div2 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 20             ; Untyped                                       ;
+; LPM_WIDTHD             ; 4              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_tim ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Div3 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 20             ; Untyped                                       ;
+; LPM_WIDTHD             ; 4              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_tim ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: rawTo4Digit:Converter0|lpm_divide:Mod3 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 20             ; Untyped                                       ;
+; LPM_WIDTHD             ; 20             ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_ecm ; Untyped                                       ;
 ; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
 ; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
 ; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
@@ -405,14 +435,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------+----------------+-----------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                          ;
 +------------------------+----------------+-----------------------------------------------+
-; LPM_WIDTHN             ; 10             ; Untyped                                       ;
-; LPM_WIDTHD             ; 10             ; Untyped                                       ;
+; LPM_WIDTHN             ; 20             ; Untyped                                       ;
+; LPM_WIDTHD             ; 20             ; Untyped                                       ;
 ; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
 ; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
 ; LPM_PIPELINE           ; 0              ; Untyped                                       ;
 ; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
 ; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
-; CBXI_PARAMETER         ; lpm_divide_ccm ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_ecm ; Untyped                                       ;
 ; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
 ; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
 ; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
@@ -428,14 +458,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------+----------------+-----------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                          ;
 +------------------------+----------------+-----------------------------------------------+
-; LPM_WIDTHN             ; 10             ; Untyped                                       ;
-; LPM_WIDTHD             ; 10             ; Untyped                                       ;
+; LPM_WIDTHN             ; 20             ; Untyped                                       ;
+; LPM_WIDTHD             ; 20             ; Untyped                                       ;
 ; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
 ; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
 ; LPM_PIPELINE           ; 0              ; Untyped                                       ;
 ; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
 ; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
-; CBXI_PARAMETER         ; lpm_divide_ccm ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_ecm ; Untyped                                       ;
 ; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
 ; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
 ; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
@@ -451,14 +481,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------+----------------+-----------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                          ;
 +------------------------+----------------+-----------------------------------------------+
-; LPM_WIDTHN             ; 10             ; Untyped                                       ;
-; LPM_WIDTHD             ; 10             ; Untyped                                       ;
+; LPM_WIDTHN             ; 20             ; Untyped                                       ;
+; LPM_WIDTHD             ; 20             ; Untyped                                       ;
 ; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
 ; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
 ; LPM_PIPELINE           ; 0              ; Untyped                                       ;
 ; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
 ; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
-; CBXI_PARAMETER         ; lpm_divide_ccm ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_ecm ; Untyped                                       ;
 ; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
 ; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
 ; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
@@ -469,32 +499,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------+
-; lpm_mult Parameter Settings by Entity Instance                                ;
-+---------------------------------------+---------------------------------------+
-; Name                                  ; Value                                 ;
-+---------------------------------------+---------------------------------------+
-; Number of entity instances            ; 1                                     ;
-; Entity Instance                       ; rawTo4Digit:Converter0|lpm_mult:Mult0 ;
-;     -- LPM_WIDTHA                     ; 12                                    ;
-;     -- LPM_WIDTHB                     ; 9                                     ;
-;     -- LPM_WIDTHP                     ; 21                                    ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED                              ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                                    ;
-;     -- INPUT_B_IS_CONSTANT            ; YES                                   ;
-;     -- USE_EAB                        ; OFF                                   ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                  ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                                    ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                                    ;
-+---------------------------------------+---------------------------------------+
-
-
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:14     ;
 +----------------+--------------+
 
 
@@ -504,7 +514,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Tue Sep 29 09:20:06 2020
+    Info: Processing started: Tue Sep 29 21:34:29 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DistanceMeasure -c DistanceMeasure
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file distancemeasure.vhd
@@ -523,90 +533,126 @@ Info (12021): Found 2 design units, including 1 entities, in source file multipl
     Info (12022): Found design unit 1: multiplex7seg4digit-behav
     Info (12023): Found entity 1: multiplex7seg4digit
 Info (12127): Elaborating entity "DistanceMeasure" for the top level hierarchy
-Info (12128): Elaborating entity "freq_div" for hierarchy "freq_div:fd1"
 Info (12128): Elaborating entity "ADC" for hierarchy "ADC:ADC0"
 Info (12128): Elaborating entity "rawTo4Digit" for hierarchy "rawTo4Digit:Converter0"
 Info (12128): Elaborating entity "multiplex7seg4digit" for hierarchy "multiplex7seg4digit:multiplex0"
-Info (278001): Inferred 6 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "rawTo4Digit:Converter0|Mult0"
+Info (278001): Inferred 8 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "rawTo4Digit:Converter0|Div0"
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "rawTo4Digit:Converter0|Div1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "rawTo4Digit:Converter0|Div2"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "rawTo4Digit:Converter0|Div3"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "rawTo4Digit:Converter0|Mod3"
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "rawTo4Digit:Converter0|Mod2"
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "rawTo4Digit:Converter0|Mod1"
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "rawTo4Digit:Converter0|Mod0"
-Info (12130): Elaborated megafunction instantiation "rawTo4Digit:Converter0|lpm_mult:Mult0"
-Info (12133): Instantiated megafunction "rawTo4Digit:Converter0|lpm_mult:Mult0" with the following parameter:
-    Info (12134): Parameter "LPM_WIDTHA" = "12"
-    Info (12134): Parameter "LPM_WIDTHB" = "9"
-    Info (12134): Parameter "LPM_WIDTHP" = "21"
-    Info (12134): Parameter "LPM_WIDTHR" = "21"
-    Info (12134): Parameter "LPM_WIDTHS" = "1"
-    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
-    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
-    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
-Info (12131): Elaborated megafunction instantiation "rawTo4Digit:Converter0|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "rawTo4Digit:Converter0|lpm_mult:Mult0"
-Info (12131): Elaborated megafunction instantiation "rawTo4Digit:Converter0|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "rawTo4Digit:Converter0|lpm_mult:Mult0"
-Info (12131): Elaborated megafunction instantiation "rawTo4Digit:Converter0|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "rawTo4Digit:Converter0|lpm_mult:Mult0"
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_mgh.tdf
-    Info (12023): Found entity 1: add_sub_mgh
-Info (12131): Elaborated megafunction instantiation "rawTo4Digit:Converter0|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "rawTo4Digit:Converter0|lpm_mult:Mult0"
-Info (12131): Elaborated megafunction instantiation "rawTo4Digit:Converter0|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "rawTo4Digit:Converter0|lpm_mult:Mult0"
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_qgh.tdf
-    Info (12023): Found entity 1: add_sub_qgh
-Info (12131): Elaborated megafunction instantiation "rawTo4Digit:Converter0|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "rawTo4Digit:Converter0|lpm_mult:Mult0"
 Info (12130): Elaborated megafunction instantiation "rawTo4Digit:Converter0|lpm_divide:Div0"
 Info (12133): Instantiated megafunction "rawTo4Digit:Converter0|lpm_divide:Div0" with the following parameter:
-    Info (12134): Parameter "LPM_WIDTHN" = "10"
-    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_WIDTHN" = "20"
+    Info (12134): Parameter "LPM_WIDTHD" = "12"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_sim.tdf
-    Info (12023): Found entity 1: lpm_divide_sim
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_klh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_klh
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_s6f.tdf
-    Info (12023): Found entity 1: alt_u_div_s6f
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ckm.tdf
+    Info (12023): Found entity 1: lpm_divide_ckm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_4nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_4nh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_s9f.tdf
+    Info (12023): Found entity 1: alt_u_div_s9f
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
     Info (12023): Found entity 1: add_sub_7pc
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
     Info (12023): Found entity 1: add_sub_8pc
-Info (12130): Elaborated megafunction instantiation "rawTo4Digit:Converter0|lpm_divide:Mod2"
-Info (12133): Instantiated megafunction "rawTo4Digit:Converter0|lpm_divide:Mod2" with the following parameter:
-    Info (12134): Parameter "LPM_WIDTHN" = "10"
-    Info (12134): Parameter "LPM_WIDTHD" = "10"
+Info (12130): Elaborated megafunction instantiation "rawTo4Digit:Converter0|lpm_divide:Div1"
+Info (12133): Instantiated megafunction "rawTo4Digit:Converter0|lpm_divide:Div1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "20"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ccm.tdf
-    Info (12023): Found entity 1: lpm_divide_ccm
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_1nh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_1nh
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_m9f.tdf
-    Info (12023): Found entity 1: alt_u_div_m9f
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "temp_DigitDecade[0]" is stuck at GND
-    Warning (13410): Pin "temp_DigitDecade[1]" is stuck at GND
-    Warning (13410): Pin "temp_DigitDecade[2]" is stuck at GND
-    Warning (13410): Pin "temp_DigitDecade[3]" is stuck at GND
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_tim.tdf
+    Info (12023): Found entity 1: lpm_divide_tim
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_llh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_llh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_u6f.tdf
+    Info (12023): Found entity 1: alt_u_div_u6f
+Info (12130): Elaborated megafunction instantiation "rawTo4Digit:Converter0|lpm_divide:Mod3"
+Info (12133): Instantiated megafunction "rawTo4Digit:Converter0|lpm_divide:Mod3" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "20"
+    Info (12134): Parameter "LPM_WIDTHD" = "20"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ecm.tdf
+    Info (12023): Found entity 1: lpm_divide_ecm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9nh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_r9f.tdf
+    Info (12023): Found entity 1: alt_u_div_r9f
 Info (286030): Timing-Driven Synthesis is running
 Info (17016): Found the following redundant logic cells in design
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_sim:auto_generated|sign_div_unsign_klh:divider|alt_u_div_s6f:divider|add_sub_6_result_int[0]~10"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_sim:auto_generated|sign_div_unsign_klh:divider|alt_u_div_s6f:divider|add_sub_7_result_int[0]~10"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_sim:auto_generated|sign_div_unsign_klh:divider|alt_u_div_s6f:divider|add_sub_8_result_int[0]~10"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod2|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_m9f:divider|add_sub_9_result_int[0]~0"
-    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_m9f:divider|add_sub_9_result_int[0]~0"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div2|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_6_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div2|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_7_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div2|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_8_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div3|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_9_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div2|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_9_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div3|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_10_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div2|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_10_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div3|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_11_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div2|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_11_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div3|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_12_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_11_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div2|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_12_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div3|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_13_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_12_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div2|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_13_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div3|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_14_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div0|lpm_divide_ckm:auto_generated|sign_div_unsign_4nh:divider|alt_u_div_s9f:divider|add_sub_12_result_int[0]~26"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_13_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div2|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_14_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div3|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_15_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_14_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div2|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_15_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div3|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_16_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_15_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div2|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_16_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div3|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_17_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_16_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div2|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_17_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div3|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_18_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod3|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider|add_sub_19_result_int[0]~0"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod3|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider|add_sub_12_result_int[0]~26"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod3|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider|add_sub_13_result_int[0]~28"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod3|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider|add_sub_14_result_int[0]~30"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod3|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider|add_sub_15_result_int[0]~32"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod3|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider|add_sub_16_result_int[0]~34"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod3|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider|add_sub_17_result_int[0]~36"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod3|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider|add_sub_18_result_int[0]~38"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_17_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div2|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_18_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod2|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider|add_sub_19_result_int[0]~0"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod2|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider|add_sub_9_result_int[0]~20"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod2|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider|add_sub_10_result_int[0]~22"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod2|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider|add_sub_11_result_int[0]~24"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod2|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider|add_sub_12_result_int[0]~26"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod2|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider|add_sub_13_result_int[0]~28"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod2|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider|add_sub_14_result_int[0]~30"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod2|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider|add_sub_15_result_int[0]~32"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod2|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider|add_sub_16_result_int[0]~34"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod2|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider|add_sub_17_result_int[0]~36"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod2|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider|add_sub_18_result_int[0]~38"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div1|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|add_sub_18_result_int[0]~10"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod1|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider|add_sub_18_result_int[0]~0"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Div0|lpm_divide_ckm:auto_generated|sign_div_unsign_4nh:divider|alt_u_div_s9f:divider|add_sub_18_result_int[0]~26"
+    Info (17048): Logic cell "rawTo4Digit:Converter0|lpm_divide:Mod0|lpm_divide_ecm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_r9f:divider|add_sub_18_result_int[0]~0"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "CLOCK_25M"
-Info (21057): Implemented 555 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3080 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 42 output pins
-    Info (21061): Implemented 510 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 4632 megabytes
-    Info: Processing ended: Tue Sep 29 09:20:16 2020
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:09
+    Info (21061): Implemented 3035 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4648 megabytes
+    Info: Processing ended: Tue Sep 29 21:34:50 2020
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:19
 
 
