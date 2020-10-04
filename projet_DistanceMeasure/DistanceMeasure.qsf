@@ -73,7 +73,6 @@ set_location_assignment PIN_D14 -to SelectionDigit[0]
 set_global_assignment -name SOURCE_FILE DistanceMeasure.qsf
 set_global_assignment -name VHDL_FILE DistanceMeasure.vhd
 set_global_assignment -name VHDL_FILE ADC.vhd
-set_global_assignment -name VHDL_FILE freq_div.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_global_assignment -name VHDL_FILE rawTo4Digit.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveformtest.vwf

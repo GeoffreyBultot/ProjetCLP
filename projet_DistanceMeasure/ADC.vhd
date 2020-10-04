@@ -14,7 +14,12 @@
 
 -- PROGRAM		"Quartus II 64-Bit"
 -- VERSION		"Version 13.0.0 Build 156 04/24/2013 SJ Web Edition"
--- CREATED		"Thu Sep 17 08:46:34 2020"
+-- CREATED		"Thu Sep 17"
+-- AUTHOR 		Bultot Geoffrey
+-- LICENSE 		All right reserved
+
+
+-- ADC DE0NANO GESTURE
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all; 
@@ -25,28 +30,35 @@ LIBRARY work;
 ENTITY ADC IS 
 	PORT
 	(
+		-- CHIP SELECT ADC
 		ADC_CS_N : out std_logic;
-		CLOCK_50MHZ: in std_logic;--ADC clock
-		ADC_SCLK : out std_logic;--ADC clock
+		-- input 50MHZ CLOCK
+		CLOCK_50MHZ: in std_logic;
+		-- ADC CLOCK generate by this component
+		ADC_SCLK : out std_logic;
 		ADC_DIN : in std_logic;
 		ADC_DOUT : out std_logic_vector (11 downto 0) --:= "000000000000"
-		--ADC_SADDR : out std_logic;--channel address (For this project we use channel 1)
-		--ADC_CS_N : out std_logic--this signal activate the ADC chip (ADC_CS_N)
 	);
 END ADC;
 
 ARCHITECTURE Behavioral OF ADC IS 
 
+-- signal to use shift register and store value before apply in output
 signal temp_ADC_Out : std_logic_vector (15 downto 0);
+-- Signals to read output
 signal enable : std_logic;
 signal sig_ADC_SCLK : std_logic;
 
 BEGIN 
-ADC_CS_N <= enable;
-ADC_SCLK <= sig_ADC_SCLK;
-
+	-- internals signals connect to output
+	ADC_CS_N <= enable;
+	ADC_SCLK <= sig_ADC_SCLK;
+	
+	--*************************************************************************************
+	--*************************************************************************************
+	
 	process(CLOCK_50MHZ)
-			variable temp : integer range 0 to 20;
+		variable temp : integer range 0 to 20;
 		begin
 			--The input frequency is divided by 20
 			if rising_edge(CLOCK_50MHZ) then
@@ -58,50 +70,47 @@ ADC_SCLK <= sig_ADC_SCLK;
 			end if;
 		end process;
 		
+	--*************************************************************************************
+	--*************************************************************************************
+	
 	process(sig_ADC_SCLK)
-	begin
-		if rising_edge(sig_ADC_SCLK) then
-
-			--This is the actual shift register
-				temp_ADC_Out(0) <= ADC_DIN;
-				for i in 1 to 15 loop
-					temp_ADC_Out(i) <= temp_ADC_Out(i-1);
-				end loop;
-		end if;
-	end process;
---fDiv1: freq_div port map (clock_in=>CLOCK_50MHZ,clock_out=>ADC_SCLK);
-
-
-	process(sig_ADC_SCLK)
-
-		variable temp : integer range 0 to 16;
-		--variable cont_temp : integer range 0 to 3;
-
+		variable temp : integer range 0 to 20000;
 		begin
-
-		--This process activate the "enable" signal every 16 clock periods
-		if rising_edge(sig_ADC_SCLK) then
-			
-
-				temp := temp + 1;
-				if (temp = 16) then
+			if rising_edge(sig_ADC_SCLK) then
+				-- use shift register while not the end of communication
+				if (temp < 17) then
+					temp_ADC_Out(0) <= ADC_DIN;
+					for i in 1 to 15 loop
+						temp_ADC_Out(i) <= temp_ADC_Out(i-1);
+					end loop;
+				-- end of communication. DO NOT SHIFT THE LAST BIT
+				else if(temp = 17) then
+						temp_ADC_Out(0) <= ADC_DIN;
+				end if;
+				end if;
+				
+				-- chip select gesture
+				if (temp = 15) then
 					enable <= '1';
-					temp := 0;
-				else
+				else if (temp < 15) then
 					enable <= '0';
 				end if;
-		end if;
-
+				end if;
+				-- increment bit counter. THis counter go to 0 automatically after 20000
+				temp := temp + 1;
+			end if;
 		end process;
 
-
-	--When the signal "enable" is high the 12 bit reading is stored in the output signal "dato_out"
+	--*************************************************************************************
+	--*************************************************************************************
+	
+	--When the signal "enable" is high => store 12 last bits to the output
 	process(sig_ADC_SCLK)
 		begin
 			if rising_edge(sig_ADC_SCLK) then
-					if (enable = '1') then
-						ADC_DOUT <= temp_ADC_Out(11 downto 0);
-					end if;
+				if (enable = '1') then
+					ADC_DOUT <= temp_ADC_Out(11 downto 0);
+				end if;
 			end if;
 
 		end process;

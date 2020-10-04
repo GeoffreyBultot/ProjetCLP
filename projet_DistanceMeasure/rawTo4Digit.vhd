@@ -14,7 +14,13 @@
 
 -- PROGRAM		"Quartus II 64-Bit"
 -- VERSION		"Version 13.0.0 Build 156 04/24/2013 SJ Web Edition"
--- CREATED		"Thu Sep 17 08:46:34 2020"
+-- CREATED		"Thu Sep 17"
+-- AUTHOR 		Bultot Geoffrey
+-- LICENSE 		All right reserved
+
+-- CE COMPOSANT PREND EN ENTREE UNE VALEUR ENTRE 0 ET 4095 VENANT D UN CAPTEUR sharp 0a41sk Et donne sa mesure sur 4 digits (dizaines, unités, dixièmes, centièmes)
+
+-- fréquence de rafraichissement de la mesure en sortie : 2HZ
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all; 
@@ -26,8 +32,11 @@ LIBRARY work;
 ENTITY rawTo4Digit IS 
 	PORT
 	(
+		-- clock (50MHZ en entrée
 		CLOCK_50MHZ : in std_logic;
-		RAW_VALUE_IN : in std_logic_vector (11 downto 0);--:= "000000000000";
+		-- Valeur d'entrée sur 12 bits (ADC 12BITS)
+		RAW_VALUE_IN : in std_logic_vector (11 downto 0);
+		-- Digits de sortie sur 4 bits
 		DigitDecade : out std_logic_vector (3 downto 0);
 		DigitUnit : out std_logic_vector (3 downto 0);
 		DigitTenth : out std_logic_vector (3 downto 0);
@@ -35,69 +44,47 @@ ENTITY rawTo4Digit IS
 	);
 END rawTo4Digit;
 
+
+--*************************************************************************************
+--**************** ARCHITECTURE Behavioral OF rawTo4Digit *****************************
+--*************************************************************************************
+
 ARCHITECTURE Behavioral OF rawTo4Digit IS 
 
---variable floatValue : real;
-
-signal averaged_RAW_VALUE_IN : std_logic_vector (11 downto 0);
+-- signal clock divided (5Hz) to refresh digits
 signal sig_refreshDigits : std_logic := '0';
---shared variable tempValueAverage : integer;
---shared variable count : integer;
+
+-- Variables pour diviser la fréquence pour l'affichage des digits
+shared variable temp : integer := 12499999;
 
 BEGIN 
-
+	-- process to divide clock in order to refresh digits 
 	process(CLOCK_50MHZ)
-			variable temp : integer;
 		begin
-			--The input frequency is divided by 20
 			if rising_edge(CLOCK_50MHZ) then
 				temp := temp + 1;
-				if (temp=7000000) then
+				if (temp=12500000) then -- 50MHZ/2/2hz = 12 500 000 (divise par 2 parce que rising_edge)
+					-- frequence divided
 					sig_refreshDigits <= not(sig_refreshDigits);
-					temp:=0;
+					temp:=0; 
 				end if;
 			end if;
 		end process;
 
---	average: process (sig_refreshDigits)--(RAW_VALUE_IN)
---		begin
---			if(count >= 10) then
---				tempValueAverage := tempValueAverage/10;
---				averaged_RAW_VALUE_IN <= std_logic_vector(to_unsigned(tempValueAverage,12));
---				count := 0;
---				--tempValueAverage := 0;
---			else
---				tempValueAverage := (tempValueAverage + to_integer(unsigned(RAW_VALUE_IN)));
---				count := count + 1;
---			end if;
-			
-		
-			
---		end process;
 
-
-
-	
 	refreshOutput : process(sig_refreshDigits)
 		variable realValue : integer := 0;
-		--variable floatValue : real := 0.0;
 		begin
 			if falling_edge(sig_refreshDigits) then
-				--floatValue := 10649.6 /real(to_integer(unsigned(RAW_VALUE_IN)));
-				--floatValue := real(to_integer(unsigned(RAW_VALUE_IN))); -- 13 * 4096 / (RAW*VOLTAGE(5))
-				if( RAW_VALUE_IN = "000000000000") then
-					DigitDecade <= (others => '0');
-					DigitUnit <= (others => '0');
-					DigitTenth <= (others => '0');
-					DigitHundredth <= (others => '0');
-				else --if (NOT(( RAW_VALUE_IN = "UUUUUUUUUUUU"))) then
+					-- Conversion. see sensor datasheet for more informations
+					realValue := 717144 / (to_integer(unsigned(RAW_VALUE_IN))/2);-- 13 * 4096 * 100 / (RAW*VOLTAGE(5)) 
+					--4096/5V : 1064960 
+					--2048/5V : 532480  
+					--4096/3V3 : 1613575 CORRIG(/9*8) : 1434288
+					--2048/3V3 : 806787 CORRIG(/9*8) : 717144
 					
+					--uncomment to have raw value to digits
 					--realValue := to_integer(unsigned(RAW_VALUE_IN));
-					--realValue := (realValue*330)/2048;
-					--realValue := to_integer(floatValue,realValue);
-					
-					
-					realValue := 806787 / to_integer(unsigned(RAW_VALUE_IN));-- 13 * 4096 * 100 / (RAW*VOLTAGE(5)) --4096/5V : 1064960 2048/5V : 532480  4096/3V3 : 1613575 2048/3V3 : 806787 
 					
 					DigitHundredth  <= std_logic_vector(to_unsigned(realValue mod 10, DigitHundredth'length));
 					realValue := realValue/10;
@@ -106,12 +93,7 @@ BEGIN
 					DigitUnit  <= std_logic_vector(to_unsigned((realValue) mod 10, DigitUnit'length));
 					realValue := realValue/10;
 					DigitDecade<= std_logic_vector(to_unsigned((realValue) mod 10, DigitDecade'length));
-				end if;
 			end if;
-				
-				--floatValue := 13*(4096/((integer)(RAW_VALUE_IN))*5));
-			--end if;
 		end process;
-
 END Behavioral;
 

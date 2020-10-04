@@ -51,3 +51,110 @@ vsim work.adc
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading work.adc(behavioral)
+vlog -reportprogress 300 -work work {D:/geoff/OneDrive - Haute Ecole Bruxelles Brabant (HE2B)/Ecole 2020 - 2021/UE_SystemesEmbarques/CircuitsLogiqueProgrammable/Cours/ProjetCLP/projet_DistanceMeasure/simulation/modelsim/DistanceMeasure.vo}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module DistanceMeasure
+# 
+# Top level modules:
+# 	DistanceMeasure
+wave create -pattern clock -initialvalue U -period 20ns -dutycycle 50 -starttime 0ns -endtime 10000ns sim:/adc/sig_ADC_SCLK
+add wave -position insertpoint  \
+sim:/adc/ADC_DOUT
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: geoff  Hostname: DESKTOP-G6OJVDD  ProcessID: 19388
+# 
+#           Attempting to use alternate WLF file "./wlftdj2sjr".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftdj2sjr
+# 
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+wave create -driver freeze -pattern clock -initialvalue U -period 10ns -dutycycle 50 -starttime 0ns -endtime 10000ns sim:/adc/ADC_DIN
+wave modify -driver freeze -pattern clock -initialvalue U -period 10ns -dutycycle 50 -starttime 0ns -endtime 10000ns Edit:/adc/ADC_DIN
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# 
+# Internal Error: In tclprim_ApplyStimulus for /adc/ADC_DIN "Time value must be greater than "now": 10000000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+run
+run
+# 
+# Internal Error: In tclprim_ApplyStimulus for /adc/ADC_DIN "Time value must be greater than "now": 10000000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+run
+run
+# 
+# Internal Error: In tclprim_ApplyStimulus for /adc/ADC_DIN "Time value must be greater than "now": 10000000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+run
+run
+# 
+# Internal Error: In tclprim_ApplyStimulus for /adc/ADC_DIN "Time value must be greater than "now": 10000000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+run
+run
+# 
+# Internal Error: In tclprim_ApplyStimulus for /adc/ADC_DIN "Time value must be greater than "now": 10000000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+run
+run
+# 
+# Internal Error: In tclprim_ApplyStimulus for /adc/ADC_DIN "Time value must be greater than "now": 10000000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+run
+restart -f
+add wave -position insertpoint  \
+sim:/adc/enable
+add wave -position insertpoint  \
+sim:/adc/ADC_DIN
+add wave -position insertpoint  \
+sim:/adc/ADC_CS_N
+run
+run
+run
+run
+run
+run
+run

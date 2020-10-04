@@ -5,7 +5,7 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div3" CBX_FILE_NAME="lpm_divide_tim.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_ecm.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod2" CBX_FILE_NAME="lpm_divide_ecm.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_ckm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_ekm.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Div2" CBX_FILE_NAME="lpm_divide_tim.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod1" CBX_FILE_NAME="lpm_divide_ecm.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|DistanceMeasure|rawTo4Digit:Converter0|lpm_divide:Mod3" CBX_FILE_NAME="lpm_divide_ecm.tdf"/>
